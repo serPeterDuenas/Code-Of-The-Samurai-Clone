@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8194582352150514576}
   - component: {fileID: 8194582352150514583}
   - component: {fileID: 8194582352150514580}
+  - component: {fileID: 6899669486370325169}
   - component: {fileID: 8194582352150514581}
   - component: {fileID: 8194582352150514570}
   m_Layer: 7
@@ -221,6 +222,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!114 &6899669486370325169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8194582352150514579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
 --- !u!114 &8194582352150514581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +288,7 @@ GameObject:
   - component: {fileID: 8194582352266779096}
   - component: {fileID: 8194582352266779102}
   m_Layer: 7
-  m_Name: EnemyPatrol_Melee
+  m_Name: Melee_EnemyHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

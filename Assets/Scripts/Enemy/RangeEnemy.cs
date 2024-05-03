@@ -14,23 +14,25 @@ using UnityEngine;
 
 public class RangeEnemy : MonoBehaviour
 {
+    [Header("Combat attributes")]
     [SerializeField] private GameObject[] bullets;
     [SerializeField] private Transform bulletPosition;
     [SerializeField] private float respawnTime = 4;
     [SerializeField] bool facingLeft = false;
+    [SerializeField] private int damage;
+    [SerializeField] private float attackCooldown;
+
     private float timer = Mathf.Infinity;
     private int direction;
 
-    [SerializeField] private float attackCooldown;
+
+    [Header("Raycast attributes")]
     [SerializeField] private float range;
     [SerializeField] private float colliderDistance;
-    [SerializeField] private int damage;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private int maxHealth = 100;
 
     private float cooldownTimer = Mathf.Infinity;
-    private int currentHealth = 0;
     //private Animator anim;
     private Player player;
 
@@ -39,7 +41,7 @@ public class RangeEnemy : MonoBehaviour
     private void Awake()
     {
         //anim = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
@@ -56,11 +58,16 @@ public class RangeEnemy : MonoBehaviour
 
         if (enemyPatrol.movingLeft)
         {
+            //Debug.Log("Range enemy moving left");
+            
             direction = -1;
+            //Debug.Log(direction);
+
         }
-        else
+        else if (!enemyPatrol.movingLeft)
         {
             direction = 1;
+            //Debug.Log(direction);
         }
 
         if (PlayerInSight())
@@ -69,7 +76,7 @@ public class RangeEnemy : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
-                Debug.Log("I am going to attack");
+                //Debug.Log("I am going to attack");
                 //anim.SetTrigger("MeleeAttack");
                 //Attack
 
@@ -111,8 +118,11 @@ public class RangeEnemy : MonoBehaviour
 
     private void Shoot()
     {
+        Debug.Log("Firing shot");
+        Debug.Log(direction);
         bullets[FindProjectile()].transform.position = bulletPosition.position;
         bullets[FindProjectile()].GetComponent<Bullet>().ActivateProjectile(direction, damage);
+        
         //Instantiate(bullet, bulletPos.position, Quaternion.identity);
     }
 
@@ -128,15 +138,5 @@ public class RangeEnemy : MonoBehaviour
 
     }
 
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        //Debug.Log("I took damage! -- enemy");
-
-        if (currentHealth <= 0)
-        {
-            gameObject.SetActive(false);
-            //Destroy(this.gameObject);
-        }
-    }
+   
 }

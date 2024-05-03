@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour
     public void ActivateProjectile(int _direction, int _damage)
     {
         direction = _direction;
+        //Debug.Log(direction);
         damage = _damage;
         //hit = false;
         lifetime = 0;

@@ -32,15 +32,17 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        Debug.Log("Attacking -- player");
+        //Debug.Log("Attacking -- player");
 
         // Detect if enemy is in the attack radius
         Collider2D[] enemyCheck = Physics2D.OverlapCircleAll(weapon.position, attackRange, enemyLayerCheck);
 
         // Damage enemy
+
         foreach (Collider2D enemy in enemyCheck)
         {
-            enemy.GetComponent<MeleeEnemy>().TakeDamage(attackDamage);
+            //if(enemy.gameObject.tag == "Range")
+                enemy.GetComponent<Health>().TakeDamage(attackDamage);
         }
     }
 

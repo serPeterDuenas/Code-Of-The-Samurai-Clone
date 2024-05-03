@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public bool isOnPlatform = false;
     public Rigidbody2D platformRB;
 
+    // Just to start player facing left as the level begins
+    [SerializeField] private bool startFacingLeft = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,7 +46,10 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(startFacingLeft)
+        {
+            Flip();
+        }
     }
 
     // Update is called once per frame

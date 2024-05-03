@@ -10,11 +10,9 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private int maxHealth = 100;
 
     private float cooldownTimer = Mathf.Infinity;
-    private int currentHealth = 0;
-    private Animator anim;
+        private Animator anim;
     private Player player;
 
     private EnemyPatrol enemyPatrol;
@@ -22,7 +20,7 @@ public class MeleeEnemy : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
@@ -43,7 +41,7 @@ public class MeleeEnemy : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
-                Debug.Log("I am going to attack");
+                //Debug.Log("I am going to attack");
                 anim.SetTrigger("MeleeAttack");
                 //Attack
             }
@@ -87,19 +85,6 @@ public class MeleeEnemy : MonoBehaviour
         {
             //Debug.Log("I attacked -- enemy");
             player.TakeDamage(damage);
-        }
-    }
-
-
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        //Debug.Log("I took damage! -- enemy");
-
-        if (currentHealth <= 0)
-        {
-            gameObject.SetActive(false);
-            //Destroy(this.gameObject);
         }
     }
 }

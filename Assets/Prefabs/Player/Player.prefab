@@ -186,7 +186,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   attackRange: 0.5
-  attackDamage: 10
+  attackDamage: 15
 --- !u!114 &36136436092551165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +209,7 @@ MonoBehaviour:
     m_Bits: 64
   isOnPlatform: 0
   platformRB: {fileID: 0}
+  startFacingLeft: 0
 --- !u!114 &36136436092551164
 MonoBehaviour:
   m_ObjectHideFlags: 0
