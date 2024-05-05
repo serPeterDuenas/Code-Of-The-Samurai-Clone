@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitDoor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //[SerializeField] private Scene[] scenes;
+    private int currentLevelCount = 0;
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision != null)
+        {
+            LoadNextScene();
+        }    
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void LoadNextScene()
     {
-        
+        SceneManager.LoadScene(currentLevelCount + 1);
+
+        currentLevelCount++;
     }
+
 }
