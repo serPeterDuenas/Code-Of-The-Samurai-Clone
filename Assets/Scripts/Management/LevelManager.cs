@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -27,8 +28,8 @@ public class LevelManager : MonoBehaviour
     public void RespawnPlayer()
     {
         Debug.Log("Respawning player");
-        //var scene = SceneManager.GetActiveScene();
-        //SceneManager.LoadScene(scene.name);
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
         player.transform.position = checkpointLocation.transform.position;
     }
 }

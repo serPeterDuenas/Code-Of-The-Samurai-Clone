@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         livesManager = FindObjectOfType<LivesManager>();
         currentLives = totalLives;
+
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void KillPlayer()
