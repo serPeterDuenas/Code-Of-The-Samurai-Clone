@@ -483,6 +483,11 @@ PrefabInstance:
       objectReference: {fileID: 942309128247402377}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16ba41fbed50502488f4f2f64414d31f, type: 3}
+--- !u!1 &1483467901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2990554625515137720, guid: f8bd7488bec475c4abeafd1fe3e2717d, type: 3}
+  m_PrefabInstance: {fileID: 1814654326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1639178971
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,6 +761,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1412473919670604643, guid: f8bd7488bec475c4abeafd1fe3e2717d, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 1483467901}
+    - target: {fileID: 1412473919670604643, guid: f8bd7488bec475c4abeafd1fe3e2717d, type: 3}
+      propertyPath: getCurrentScene
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412473919670604643, guid: f8bd7488bec475c4abeafd1fe3e2717d, type: 3}
+      propertyPath: waitOnSecondsMenu
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412473919670604643, guid: f8bd7488bec475c4abeafd1fe3e2717d, type: 3}
+      propertyPath: mainMenuScreenName
+      value: Main_Menu
+      objectReference: {fileID: 0}
     - target: {fileID: 4836507269276751030, guid: f8bd7488bec475c4abeafd1fe3e2717d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2333,13 +2354,26 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4137200214712888358}
+  - component: {fileID: 6069082956038397151}
   m_Layer: 0
   m_Name: TestLevelPrefab
-  m_TagString: Untagged
+  m_TagString: Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6069082956038397151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069082956038397150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04daa882b8be64d43990d1d9b2cc9f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6237599621346198610
 Transform:
   m_ObjectHideFlags: 0
