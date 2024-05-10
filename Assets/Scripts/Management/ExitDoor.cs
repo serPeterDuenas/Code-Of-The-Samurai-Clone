@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ExitDoor : MonoBehaviour
 {
-    //[SerializeField] private Scene[] scenes;
-    private int currentLevelCount = 0;
+    // Could implement using a String instead
+
+
+    //private int currentLevelCount = 0;
+
+    [SerializeField] private string scene;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,9 +25,13 @@ public class ExitDoor : MonoBehaviour
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(currentLevelCount + 1);
+        SceneManager.LoadScene(scene);
+        //SceneManager.LoadScene(currentLevelCount + 1);
 
-        currentLevelCount++;
+        //currentLevelCount++;
     }
+
+
+
 
 }

@@ -27,7 +27,14 @@ public class Player : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int CurrentHealth = 0;
-    
+    [SerializeField] private int totalLives = 5;
+    private int currentLives;
+
+
+    [SerializeField] private LevelManager levelManager;
+    [SerializeField] private LivesManager livesManager;
+    private bool isDead = false;
+
 
     //[Header("Weapon attributes")]
     //public Transform weapon;
@@ -53,19 +60,33 @@ public class Player : MonoBehaviour
         }
     }
 
-
-    public static void KillPlayer()
-    {
-        var scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
-    }
-
-
     private void Awake()
     {
         CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        levelManager = FindObjectOfType<LevelManager>();
+        livesManager = FindObjectOfType<LivesManager>();
+        currentLives = totalLives;
     }
+
+    public void KillPlayer()
+    {
+        levelManager.RespawnPlayer();
+        Respawn();
+        //Checkpoint.RespawnPlayer();
+    }
+
+
+    private void Respawn()
+    {
+        int takeAwayLife = 1;
+
+        CurrentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        livesManager.UpdateLives(takeAwayLife);
+    }
+
+   
 
 
    
@@ -73,7 +94,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        
+        if(isDead)
+        {
+            Respawn();
+            isDead = false;
+        }
 
     }
 

@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class KillPlayer : MonoBehaviour
 {
 
+    [SerializeField] LevelManager levelManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -23,8 +25,7 @@ public class KillPlayer : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collided with player");
-            Player.KillPlayer();
+            levelManager.RespawnPlayer();
         }
     }
 }
