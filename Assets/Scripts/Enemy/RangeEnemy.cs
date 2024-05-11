@@ -118,8 +118,8 @@ public class RangeEnemy : MonoBehaviour
 
     private void Shoot()
     {
-        Debug.Log("Firing shot");
-        Debug.Log(direction);
+        //Debug.Log("Firing shot");
+        //Debug.Log(direction);
         bullets[FindProjectile()].transform.position = bulletPosition.position;
         bullets[FindProjectile()].GetComponent<Bullet>().ActivateProjectile(direction, damage);
         

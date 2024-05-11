@@ -5,6 +5,7 @@ using UnityEngine;
 public class DontDestroyUI : MonoBehaviour
 {
     private static DontDestroyUI thisInstance;
+    public bool isLoadingMenu = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,13 +17,19 @@ public class DontDestroyUI : MonoBehaviour
         }
         else
         {
-            Object.Destroy(gameObject);
+            Destroy(gameObject);
         }
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(isLoadingMenu)
+        {
+            Destroy(gameObject);
+        }
+        //Debug.Log(isLoadingMenu);
     }
 }

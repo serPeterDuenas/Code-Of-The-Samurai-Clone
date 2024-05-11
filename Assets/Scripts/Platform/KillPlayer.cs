@@ -25,6 +25,7 @@ public class KillPlayer : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            // stupid current workout around. Need to implement this better
             levelManager.RespawnPlayer();
         }
     }

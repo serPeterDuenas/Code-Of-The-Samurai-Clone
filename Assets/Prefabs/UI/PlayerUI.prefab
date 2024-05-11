@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e84803214583941b5ba24813fc99ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLoadingMenu: 0
 --- !u!1 &4836507270186597002
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,4 +735,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalLives: 3
-  gameOverScreen: {fileID: 0}
+  currentLives: 0
+  mainMenuScreenName: MainMenu
