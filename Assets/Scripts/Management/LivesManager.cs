@@ -10,6 +10,8 @@ public class LivesManager : MonoBehaviour
     public int currentLives;
     private LivesManager thisManager;
     private DontDestroyUI destroyUI;
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private float waitOnSecondsMenu;
 
 
     private Text playerLivesText;
@@ -41,6 +43,7 @@ public class LivesManager : MonoBehaviour
 
         if (currentLives == 0) 
         {
+            gameOverScreen.SetActive(true);
             SceneManager.LoadScene(mainMenuScreenName);
             Destroy(transform.parent.gameObject);
         }
@@ -52,6 +55,16 @@ public class LivesManager : MonoBehaviour
         //getCurrentScene = GameObject.FindWithTag("Level");
         playerLivesText.text = "Current lives: " + currentLives;
 
-        
+        if (gameOverScreen.activeInHierarchy)
+        {
+            waitOnSecondsMenu -= Time.deltaTime;
+        }
+
+        if (waitOnSecondsMenu < 0)
+        {
+            gameOverScreen.SetActive(false);
+        }
+
+
     }
 }

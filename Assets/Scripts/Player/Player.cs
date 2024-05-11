@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        healthBar = FindObjectOfType<HealthBar>();
         CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         levelManager = FindObjectOfType<LevelManager>();
@@ -73,7 +74,7 @@ public class Player : MonoBehaviour
 
     public void KillPlayer()
     {
-        levelManager.RespawnPlayer();
+        //levelManager.RespawnPlayer();
         Respawn();
         //Checkpoint.RespawnPlayer();
     }
