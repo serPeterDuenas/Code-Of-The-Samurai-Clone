@@ -12,11 +12,9 @@ public class Player : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int CurrentHealth = 0;
     [SerializeField] private int totalLives = 5;
-    private int currentLives;
 
-
-    //[SerializeField] private LevelManager levelManager;
     [SerializeField] private LivesManager livesManager;
+    [SerializeField] private GameManager gameManager;
     private bool isDead = false;
 
     
@@ -39,30 +37,25 @@ public class Player : MonoBehaviour
         healthBar = FindObjectOfType<HealthBar>();
         CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        //levelManager = FindObjectOfType<LevelManager>();
         livesManager = FindObjectOfType<LivesManager>();
-        currentLives = totalLives;
-
-        //DontDestroyOnLoad(gameObject);
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void KillPlayer()
     {
-        //levelManager.RespawnPlayer();
         Respawn();
-        //Checkpoint.RespawnPlayer();
+        livesManager.UpdateLives();
+        gameManager.ResetScene();
     }
 
 
     private void Respawn()
     {
-        int takeAwayLife = 1;
-
         CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        livesManager.UpdateLives(takeAwayLife);
-        var scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        
+        //var scene = SceneManager.GetActiveScene();
+        //SceneManager.LoadScene(scene.name);
     }
 
    

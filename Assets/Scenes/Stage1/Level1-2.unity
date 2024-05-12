@@ -438,6 +438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c930f9990798f40a2ad2d966bec571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLives: 3
+  mainMenuSceneName: MainMenu
 --- !u!1 &1764956709
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,8 +954,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce75f10e750908e4f944aded31321c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalLives: 3
   gameOverScreen: {fileID: 0}
+  waitOnSecondsMenu: 0
+  mainMenuSceneName: 
 --- !u!114 &1760449637803496070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4648,8 +4651,8 @@ MonoBehaviour:
   maxHealth: 100
   CurrentHealth: 0
   totalLives: 5
-  levelManager: {fileID: 0}
   livesManager: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!114 &8954542453317160931
 MonoBehaviour:
   m_ObjectHideFlags: 0

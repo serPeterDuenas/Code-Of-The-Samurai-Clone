@@ -7,8 +7,10 @@ public class LevelManager : MonoBehaviour
 {
     // Script handles the respawning of player at designated checkpoints per level
 
-    [SerializeField] private GameObject getCurrentScene;
+    //[SerializeField] private GameObject getCurrentScene;
     
+
+
     [SerializeField] private Transform checkpointLocation;
     [SerializeField] private Transform player;
 
@@ -18,7 +20,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         //DontDestroyOnLoad(gameObject);
-        getCurrentScene = GameObject.FindWithTag("Level");
+        //getCurrentScene = GameObject.FindWithTag("Level");
         //livesManager = GetComponent<LivesManager>();
     }
 

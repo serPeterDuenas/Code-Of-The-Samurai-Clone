@@ -6,16 +6,14 @@ using UnityEngine.UI;
 
 public class LivesManager : MonoBehaviour
 {
-    [SerializeField] private int totalLives;
-    public int currentLives;
-    private LivesManager thisManager;
-    private DontDestroyUI destroyUI;
+    //private GameManager gameManager;
+    private int currentLives;
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private float waitOnSecondsMenu;
-
+    //[SerializeField] private string mainMenuSceneName;
 
     private Text playerLivesText;
-    [SerializeField] private string mainMenuScreenName;
+    
 
 
     
@@ -24,46 +22,51 @@ public class LivesManager : MonoBehaviour
     void Start()
     {
         playerLivesText = GetComponent<Text>();
-        currentLives = totalLives;
-        
-        destroyUI = GetComponentInParent<DontDestroyUI>();
-
+        //gameOverScreen = FindObjectOfType<GameOver>
     }
 
     private void Awake()
     {
+        currentLives = GameManager.currentPlayerLives;
 
     }
 
 
   
-    public void UpdateLives(int takeAwayLife)
+    public void UpdateLives()
     {
-        currentLives -= takeAwayLife;
-
-        if (currentLives == 0) 
-        {
-            gameOverScreen.SetActive(true);
-            SceneManager.LoadScene(mainMenuScreenName);
-            Destroy(transform.parent.gameObject);
-        }
+        currentLives--;
+        //Debug.Log("Update player lives -- LivesManager");
+        //Debug.Log("Current lives -- LivesManager: " + currentLives);
+        
     }    
+
 
     // Update is called once per frame
     void Update()
     {
-        //getCurrentScene = GameObject.FindWithTag("Level");
+
+        if (currentLives == 0)
+        {
+            gameOverScreen.SetActive(true);
+        }
+
         playerLivesText.text = "Current lives: " + currentLives;
 
         if (gameOverScreen.activeInHierarchy)
         {
             waitOnSecondsMenu -= Time.deltaTime;
+           
         }
 
         if (waitOnSecondsMenu < 0)
         {
             gameOverScreen.SetActive(false);
+            GameManager.playerDead = true;
+            //Debug.Log(GameManager.playerDead);
+            //Destroy(gameObject);
         }
+
 
 
     }

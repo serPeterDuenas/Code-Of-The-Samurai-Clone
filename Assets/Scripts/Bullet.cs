@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("bullet collided with player");
+            //Debug.Log("bullet collided with player");
             player = collision.GetComponent<Player>();
             player.TakeDamage(damage);
         }

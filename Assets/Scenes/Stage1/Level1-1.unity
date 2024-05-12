@@ -513,6 +513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c930f9990798f40a2ad2d966bec571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLives: 3
+  mainMenuSceneName: MainMenu
 --- !u!1 &1616892205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,8 +1166,8 @@ MonoBehaviour:
   maxHealth: 100
   CurrentHealth: 0
   totalLives: 5
-  levelManager: {fileID: 0}
   livesManager: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!114 &36136436866309057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,8 +1390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce75f10e750908e4f944aded31321c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalLives: 3
-  gameOverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 2990554625713134477}
+  waitOnSecondsMenu: 3
 --- !u!1 &1421453588351024908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,7 +2548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab04a0d0e72fb246a6f3dc25fcbea21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!4 &4709398381285504618
 Transform:
   m_ObjectHideFlags: 0
@@ -2761,7 +2763,7 @@ GameObject:
   - component: {fileID: 4836507270150268289}
   - component: {fileID: 4836507270150268288}
   m_Layer: 5
-  m_Name: PlayerUI
+  m_Name: MainHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3082,8 +3084,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9751, y: -5.501}
-  m_SizeDelta: {x: 2092.3691, y: 993.7336}
+  m_AnchoredPosition: {x: -13.8411, y: -0.8181}
+  m_SizeDelta: {x: 2180.7773, y: 1003.0992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5950036128261654335
 GameObject:
