@@ -25,6 +25,7 @@ public class ExitDoor : MonoBehaviour
 
     private void LoadNextScene()
     {
+        GameManager.goingToNextScene = true;
         SceneManager.LoadScene(scene);
         //SceneManager.LoadScene(currentLevelCount + 1);
 

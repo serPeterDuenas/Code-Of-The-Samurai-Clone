@@ -12,20 +12,26 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private LevelLoader currentLevel;
     [SerializeField] private string mainMenuSceneName;
     public static bool playerDead = false;
+    public static bool goingToNextScene = false;
 
     // Start is called before the first frame update
     void Awake()
     {
         //Debug.Log("PLayert lives Gamemanager " + playerLives);
-       
-        
 
 
-        if(!hasInit) 
+
+
+        if (!hasInit)
         {
             currentPlayerLives = playerLives;
         }
-        else 
+        else if (goingToNextScene)
+        {
+            goingToNextScene = false;
+            return;
+        }
+        else
         {
             currentPlayerLives--;
         }

@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int CurrentHealth = 0;
-    [SerializeField] private int totalLives = 5;
 
     [SerializeField] private LivesManager livesManager;
     [SerializeField] private GameManager gameManager;
