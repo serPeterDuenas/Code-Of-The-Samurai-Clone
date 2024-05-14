@@ -1165,7 +1165,6 @@ MonoBehaviour:
   healthBar: {fileID: 4836507271060229042}
   maxHealth: 100
   CurrentHealth: 0
-  totalLives: 5
   livesManager: {fileID: 0}
   gameManager: {fileID: 0}
 --- !u!114 &36136436866309057
@@ -4240,7 +4239,7 @@ MonoBehaviour:
   attackCooldown: 2
   range: 1.5
   colliderDistance: 0.8
-  damage: 99
+  damage: 15
   boxCollider: {fileID: 8194582353764054362}
   playerLayer:
     serializedVersion: 2
