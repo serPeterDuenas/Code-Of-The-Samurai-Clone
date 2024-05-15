@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayerCheck;
     [SerializeField] private float attackRange = 0.5f;
     [SerializeField] private int attackDamage = 10;
+    [SerializeField] private AudioClip attaackSound;
 
     // Start is called before the first frame update
     void Start()

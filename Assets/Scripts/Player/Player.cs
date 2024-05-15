@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
     [SerializeField] private int CurrentHealth = 0;
 
     [SerializeField] private LivesManager livesManager;
-    [SerializeField] private GameManager gameManager;
     private bool isDead = false;
 
     
@@ -37,14 +36,13 @@ public class Player : MonoBehaviour
         CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         livesManager = FindObjectOfType<LivesManager>();
-        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void KillPlayer()
     {
         Respawn();
         livesManager.UpdateLives();
-        gameManager.ResetScene();
+        GameManager.thisInstance.ResetScene();
     }
 
 

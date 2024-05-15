@@ -18,12 +18,14 @@ public class PlayerMovement : MonoBehaviour
     // Player's logic for moving platform
     public bool isOnPlatform = false;
     public Rigidbody2D platformRB;
+    Collider2D thisCollider;
 
     // Just to start player facing left as the level begins
     [SerializeField] private bool startFacingLeft = false;
 
     private void Awake()
     {
+        thisCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -55,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         moveDirection = (int)Input.GetAxisRaw("Horizontal");
 
         // Checks the player's facing direction, and rotates their position accordingly
@@ -86,9 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-
-
-
+  
     private bool isGrounded()
     {
         return Physics2D.OverlapCapsule

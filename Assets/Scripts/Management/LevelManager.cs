@@ -5,42 +5,65 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    // Script handles the respawning of player at designated checkpoints per level
-
-    //[SerializeField] private GameObject getCurrentScene;
-    
+    public static LevelManager thisInstance { get; private set; }
 
 
-    [SerializeField] private Transform checkpointLocation;
-    [SerializeField] private Transform player;
 
-    //private int currentPlayerLives;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        //DontDestroyOnLoad(gameObject);
-        //getCurrentScene = GameObject.FindWithTag("Level");
-        //livesManager = GetComponent<LivesManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
+        if (thisInstance == null)
+        {
+            thisInstance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (thisInstance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
 
-   
-
-
-    public void RespawnPlayer()
+    public void CheckStage()
     {
-        //currentPlayerLives = getLives;
-
-        //Debug.Log("Respawning player");
         var scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
-        player.transform.position = checkpointLocation.transform.position;
+
+        if (scene.name == "MainMenu")
+        {
+            GameManager.thisInstance.UpdateStage(0);
+            MusicManager.soundPlayed = false;
+        }
+        else if (scene.name == "Level1-1")
+        {
+            GameManager.thisInstance.UpdateStage(1);
+            MusicManager.soundPlayed = false;
+        }
+        else if (scene.name == "Level2-1")
+        {
+            GameManager.thisInstance.UpdateStage(2);
+            MusicManager.soundPlayed = false;
+        }
+        else if (scene.name == "Level3-1")
+        {
+            GameManager.thisInstance.UpdateStage(3);
+            MusicManager.soundPlayed = false;
+        }
+        else if (scene.name == "Boss1")
+        {
+            GameManager.thisInstance.UpdateStage(4);
+            MusicManager.soundPlayed = false;
+        }
+        else if (scene.name == "Boss2")
+        {
+            GameManager.thisInstance.UpdateStage(5);
+            MusicManager.soundPlayed = false;
+        }
+        else if (scene.name == "Boss3")
+        {
+            GameManager.thisInstance.UpdateStage(6);
+            MusicManager.soundPlayed = false;
+        }
+        else
+            return;
     }
 }

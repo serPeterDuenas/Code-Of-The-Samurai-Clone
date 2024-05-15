@@ -452,8 +452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99689a02ed5f2d448bd7c62f0cd20b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointLocation: {fileID: 1985019874}
-  player: {fileID: 36136436866309061}
 --- !u!4 &862188780
 Transform:
   m_ObjectHideFlags: 0
@@ -515,6 +513,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLives: 3
   mainMenuSceneName: MainMenu
+  mainMenuMusic: {fileID: 0}
+  stageOneMusic: {fileID: 8300000, guid: 5d55a5a84bac94a4dbb5c105242f76ba, type: 3}
+  stageTwoMusic: {fileID: 0}
+  stageThreeMusic: {fileID: 0}
+  bossOneMusic: {fileID: 0}
+  bossTwoMusic: {fileID: 0}
+  bossThreeMusic: {fileID: 0}
 --- !u!1 &1616892205
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f16c64c5fdb6264c8d816ec8a9d33e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Level1-2
+  scene: Level2-1
 --- !u!1 &1985019873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1171,6 @@ MonoBehaviour:
   maxHealth: 100
   CurrentHealth: 0
   livesManager: {fileID: 0}
-  gameManager: {fileID: 0}
 --- !u!114 &36136436866309057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,6 +1350,7 @@ MonoBehaviour:
     m_Bits: 128
   attackRange: 0.5
   attackDamage: 20
+  attaackSound: {fileID: 0}
 --- !u!4 &36136437303760772
 Transform:
   m_ObjectHideFlags: 0
@@ -2547,7 +2552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab04a0d0e72fb246a6f3dc25fcbea21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!4 &4709398381285504618
 Transform:
   m_ObjectHideFlags: 0
