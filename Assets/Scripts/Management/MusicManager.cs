@@ -28,11 +28,27 @@ public class MusicManager : MonoBehaviour
 
     public void PlayMusic(AudioClip _sound)
     {
-        if(!soundPlayed)
+        if(source.isPlaying)
+        {
+            return;
+        }
+        else
         {
             source.PlayOneShot(_sound);
-            soundPlayed = true;
         }
        
+    }
+
+    public void StopMusic(AudioClip _sound)
+    {
+        if (source.isPlaying)
+        {
+            return;
+        }
+        else
+        {
+            source.Stop();
+        }
+
     }
 }
