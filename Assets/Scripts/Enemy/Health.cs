@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField] private AudioClip damageClip;
     [SerializeField] private int maxHealth = 100;
     private int currentHealth = 0;
 
@@ -27,6 +28,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        SoundManager.thisInstance.PlaySound(damageClip);
         currentHealth -= damage;
         //Debug.Log("I took damage! -- enemy");
 

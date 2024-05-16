@@ -21,6 +21,7 @@ public class RangeEnemy : MonoBehaviour
     [SerializeField] bool facingLeft = false;
     [SerializeField] private int damage;
     [SerializeField] private float attackCooldown;
+    [SerializeField] private AudioClip projectile;
 
     private float timer = Mathf.Infinity;
     private int direction;
@@ -122,7 +123,8 @@ public class RangeEnemy : MonoBehaviour
         //Debug.Log(direction);
         bullets[FindProjectile()].transform.position = bulletPosition.position;
         bullets[FindProjectile()].GetComponent<Bullet>().ActivateProjectile(direction, damage);
-        
+        SoundManager.thisInstance.PlaySound(projectile);
+
         //Instantiate(bullet, bulletPos.position, Quaternion.identity);
     }
 

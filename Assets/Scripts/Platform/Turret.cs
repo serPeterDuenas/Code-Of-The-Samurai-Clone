@@ -8,6 +8,8 @@ public class Turret : MonoBehaviour
     // This class takes an object, and after a set time, will respawn them into the scene
     // Uses an ammo system that goes through the list until iterated through
 
+    [SerializeField] private AudioClip projectile;
+
     [SerializeField] private GameObject[] bullets;
     [SerializeField] private Transform bulletPosition;
     [SerializeField] private float respawnTime = 4;
@@ -49,6 +51,8 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
+        SoundManager.thisInstance.PlaySound(projectile);
+
         bullets[FindProjectile()].transform.position = bulletPosition.position;
         bullets[FindProjectile()].GetComponent<Bullet>().ActivateProjectile(direction, damage);
         //Instantiate(bullet, bulletPos.position, Quaternion.identity);

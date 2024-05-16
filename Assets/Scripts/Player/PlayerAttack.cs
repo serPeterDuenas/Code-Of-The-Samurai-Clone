@@ -10,7 +10,9 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayerCheck;
     [SerializeField] private float attackRange = 0.5f;
     [SerializeField] private int attackDamage = 10;
-    [SerializeField] private AudioClip attaackSound;
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private float attackCooldown = 1.5f;
+    private float cooldownTimer = Mathf.Infinity;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +23,12 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cooldownTimer += Time.deltaTime;
 
         // Checks if player is attacking
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && cooldownTimer >= attackCooldown)
         {
+            cooldownTimer = 0;
             Attack();
         }
     }
@@ -33,6 +37,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        SoundManager.thisInstance.PlaySound(attackSound);
         //Debug.Log("Attacking -- player");
 
         // Detect if enemy is in the attack radius
