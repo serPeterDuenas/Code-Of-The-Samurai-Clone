@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager thisInstance { get; private set; }
-
+    public static int currentStage = 0;
+    public static LevelManager thisInstance { get; set; }
+    private bool isPlaying = false;
 
 
     private void Awake()
@@ -21,6 +24,7 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
     }
 
 
@@ -28,42 +32,69 @@ public class LevelManager : MonoBehaviour
     {
         var scene = SceneManager.GetActiveScene();
 
-        if (scene.name == "MainMenu")
-        {
-            GameManager.thisInstance.UpdateStage(0);
-            MusicManager.soundPlayed = false;
-        }
-        else if (scene.name == "Level1-1")
-        {
-            GameManager.thisInstance.UpdateStage(1);
-            MusicManager.soundPlayed = false;
-        }
-        else if (scene.name == "Level2-1")
-        {
-            GameManager.thisInstance.UpdateStage(2);
-            MusicManager.soundPlayed = false;
-        }
-        else if (scene.name == "Level3-1")
-        {
-            GameManager.thisInstance.UpdateStage(3);
-            MusicManager.soundPlayed = false;
-        }
-        else if (scene.name == "Boss1")
-        {
-            GameManager.thisInstance.UpdateStage(4);
-            MusicManager.soundPlayed = false;
-        }
-        else if (scene.name == "Boss2")
-        {
-            GameManager.thisInstance.UpdateStage(5);
-            MusicManager.soundPlayed = false;
-        }
-        else if (scene.name == "Boss3")
-        {
-            GameManager.thisInstance.UpdateStage(6);
-            MusicManager.soundPlayed = false;
-        }
-        else
-            return;
+
+        //if (scene.name == "MainMenu")
+        //{
+        //    currentStage = 0;
+        //    Debug.Log(scene.name);
+        //}
+        //else if (scene.name == "Level1-1")
+        //{
+        //    currentStage = 1;
+        //    Debug.Log(scene.name);
+        //}
+        //else if (scene.name == "Level2-1")
+        //{
+        //    currentStage = 2;
+        //    Debug.Log(scene.name);
+        //}
+        //else if (scene.name == "Level3-1")
+        //{
+        //    currentStage = 3;
+        //}
+        //else if (scene.name == "Boss1")
+        //{
+        //    currentStage = 4;
+        //}
+        //else if (scene.name == "Boss2")
+        //{
+        //    currentStage = 5;
+        //}
+        //else if (scene.name == "Boss3")
+        //{
+        //    currentStage = 6;
+        //}
+        //else
+        //    return;
+
+        Debug.Log(currentStage);
+        Debug.Log(scene.name);
+
     }
+
+
+
+    public void ChangeStage(int stage)
+    {
+        var scene = SceneManager.GetActiveScene();
+
+
+        Debug.Log(currentStage);
+        Debug.Log(scene.name);
+
+        currentStage = stage;
+
+        //PlayStageMusic();
+    }
+
+
+    public void PlayStageMusic()
+    {
+        MusicManager.thisInstance.StopMusic();
+        MusicManager.thisInstance.PlayMusic(currentStage);
+
+        var scene = SceneManager.GetActiveScene();
+        Debug.Log(currentStage);
+        Debug.Log(scene.name);
+    }    
 }

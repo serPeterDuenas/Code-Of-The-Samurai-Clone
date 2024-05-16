@@ -6,13 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ExitDoor : MonoBehaviour
 {
-    // Could implement using a String instead
+    [SerializeField] private bool isNextStage = false;
 
-
-    //private int currentLevelCount = 0;
 
     [SerializeField] private string scene;
-
+    //[SerializeField] private bool startNextStage = false;
+    public static int currentStage = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,6 +26,17 @@ public class ExitDoor : MonoBehaviour
     {
         GameManager.goingToNextScene = true;
         SceneManager.LoadScene(scene);
+
+        if(isNextStage)
+        {
+            currentStage = currentStage + 1;
+            LevelManager.thisInstance.ChangeStage(currentStage);
+            LevelManager.thisInstance.PlayStageMusic();
+            isNextStage = false;
+        }    
+
+
+        //LevelManager.thisInstance.CheckStage(updateStage);
         //SceneManager.LoadScene(currentLevelCount + 1);
 
         //currentLevelCount++;

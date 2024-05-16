@@ -16,25 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string mainMenuSceneName;
     public static bool playerDead = false;
     public static bool goingToNextScene = false;
-
+    [SerializeField] private string currentScene;
     //private string scene;
-
-
-    [SerializeField] private AudioClip mainMenuMusic;
-    [SerializeField] private AudioClip stageOneMusic;
-    [SerializeField] private AudioClip stageTwoMusic;
-    [SerializeField] private AudioClip stageThreeMusic;
-    [SerializeField] private AudioClip bossOneMusic;
-    [SerializeField] private AudioClip bossTwoMusic;
-    [SerializeField] private AudioClip bossThreeMusic;
-
-    private int currentStage = 0;
-
-
-    public void UpdateStage(int getStage)
-    {
-        currentStage = getStage;
-    }
 
 
     // Start is called before the first frame update
@@ -44,10 +27,10 @@ public class GameManager : MonoBehaviour
 
 
 
-
         if (!hasInit)
         {
             currentPlayerLives = playerLives;
+            //currentPlayerLives--;
         }
         else if (goingToNextScene)
         {
@@ -57,7 +40,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            currentPlayerLives--;
+            return;
         }
         //Debug.Log(currentPlayerLives);
 
@@ -80,35 +63,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(currentStage)
-        {
-            case 0:
-                MusicManager.thisInstance.PlayMusic(mainMenuMusic);
-                //MusicManager.thisInstance.soundPlayed = true;
-                break;
-            case 1:
-                MusicManager.thisInstance.PlayMusic(stageOneMusic);
-                break;
-            case 2:
-                MusicManager.thisInstance.PlayMusic(stageTwoMusic);
-                break;
-            case 3:
-                MusicManager.thisInstance.PlayMusic(stageThreeMusic);
-                break;
-            case 4:
-                MusicManager.thisInstance.PlayMusic(bossOneMusic);
-                break;
-            case 5:
-                MusicManager.thisInstance.PlayMusic(bossTwoMusic);
-                break;
-            case 6:
-                MusicManager.thisInstance.PlayMusic(bossThreeMusic);
-                break;
-            default:
-                MusicManager.thisInstance.PlayMusic(mainMenuMusic);
-                break;
-        }
-
 
         if (currentPlayerLives == 0 && playerDead)
         {
@@ -120,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
         else
             return;
-
+        
         //Debug.Log(playerDead);
     }
 
@@ -128,16 +82,22 @@ public class GameManager : MonoBehaviour
     public void ResetScene()
     {
         hasInit = true;
+        currentPlayerLives--;
         
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
+        currentScene = scene.name;
     }
 
 
     public void LoadMenu()
     {
         SceneManager.LoadScene(mainMenuSceneName);
-        currentStage = 0;
+        LevelManager.thisInstance.CheckStage();
+        ExitDoor.currentStage = 1;
+
+        var scene = SceneManager.GetActiveScene();
+        currentScene = scene.name;
     }
 
 

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
+
     public static MusicManager thisInstance { get; private set; }
     private AudioSource source;
+    [SerializeField] private AudioClip[] clips;
     public static bool soundPlayed = false;
 
 
@@ -26,28 +28,30 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    public void PlayMusic(AudioClip _sound)
+    public void PlayMusic(int currentStage)
     {
-        if(source.isPlaying)
+        if (source.isPlaying)
         {
+            soundPlayed = true;
             return;
         }
         else
         {
-            source.PlayOneShot(_sound);
+            source.PlayOneShot(clips[currentStage]);
+            source.loop = true;
         }
        
     }
 
-    public void StopMusic(AudioClip _sound)
+    public void StopMusic()
     {
         if (source.isPlaying)
         {
-            return;
+            source.Stop();
         }
         else
         {
-            source.Stop();
+            return;
         }
 
     }
