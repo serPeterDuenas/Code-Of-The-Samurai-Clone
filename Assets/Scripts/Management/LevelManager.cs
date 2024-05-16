@@ -25,51 +25,53 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
+        CheckStage();
     }
 
 
     public void CheckStage()
     {
         var scene = SceneManager.GetActiveScene();
+        Debug.Log(scene.name);
 
-
-        //if (scene.name == "MainMenu")
-        //{
-        //    currentStage = 0;
-        //    Debug.Log(scene.name);
-        //}
-        //else if (scene.name == "Level1-1")
-        //{
-        //    currentStage = 1;
-        //    Debug.Log(scene.name);
-        //}
-        //else if (scene.name == "Level2-1")
-        //{
-        //    currentStage = 2;
-        //    Debug.Log(scene.name);
-        //}
-        //else if (scene.name == "Level3-1")
-        //{
-        //    currentStage = 3;
-        //}
-        //else if (scene.name == "Boss1")
-        //{
-        //    currentStage = 4;
-        //}
-        //else if (scene.name == "Boss2")
-        //{
-        //    currentStage = 5;
-        //}
-        //else if (scene.name == "Boss3")
-        //{
-        //    currentStage = 6;
-        //}
-        //else
-        //    return;
+        if (scene.name == "MainMenu")
+        {
+           currentStage = 0;
+           Debug.Log(scene.name);
+        }
+        else if (scene.name == "Level1-1")
+        {
+            currentStage = 1;
+            Debug.Log(scene.name);
+        }
+        else if (scene.name == "Level2-1")
+        {
+           currentStage = 2;
+            Debug.Log(scene.name);
+        }
+        else if (scene.name == "Level3-1")
+        {
+            currentStage = 3;
+        }
+        else if (scene.name == "Boss1")
+        {
+            currentStage = 4;
+        }
+        else if (scene.name == "Boss2")
+        {
+            currentStage = 5;
+        }
+        else if (scene.name == "Boss3")
+        {
+            currentStage = 6;
+        }
+        else
+            return;
 
         Debug.Log(currentStage);
         Debug.Log(scene.name);
 
+        PlayStageMusic();
     }
 
 
