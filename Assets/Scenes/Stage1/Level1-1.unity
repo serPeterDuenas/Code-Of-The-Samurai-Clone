@@ -613,7 +613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1712100628}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.44, y: -0.44, z: -0.003604889}
+  m_LocalPosition: {x: 11.37, y: 9.56, z: -0.003604889}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1254,7 +1254,8 @@ MonoBehaviour:
     m_Bits: 128
   attackRange: 0.5
   attackDamage: 20
-  attaackSound: {fileID: 0}
+  attackSound: {fileID: 0}
+  attackCooldown: 1.5
 --- !u!4 &36136437303760772
 Transform:
   m_ObjectHideFlags: 0
@@ -1632,6 +1633,7 @@ MonoBehaviour:
   platformSteppedOn: {r: 0.40558362, g: 1, b: 0.06132078, a: 1}
   originalColor: {r: 0, g: 1, b: 0.74361134, a: 1}
   DelayToActive: 1.5
+  isVanished: 0
 --- !u!61 &2617478762974429971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1833,6 +1835,7 @@ MonoBehaviour:
   platformSteppedOn: {r: 0.40558362, g: 1, b: 0.06132078, a: 1}
   originalColor: {r: 0, g: 1, b: 0.74361134, a: 1}
   DelayToActive: 1.5
+  isVanished: 0
 --- !u!4 &2617478763146174174
 Transform:
   m_ObjectHideFlags: 0
@@ -1905,6 +1908,7 @@ MonoBehaviour:
   platformSteppedOn: {r: 0.40558362, g: 1, b: 0.06132078, a: 1}
   originalColor: {r: 0, g: 1, b: 0.74361134, a: 1}
   DelayToActive: 1.5
+  isVanished: 0
 --- !u!61 &2617478763939058454
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3030,6 +3034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageClip: {fileID: 0}
   maxHealth: 40
 --- !u!114 &6899669487756342808
 MonoBehaviour:
@@ -3043,6 +3048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageClip: {fileID: 0}
   maxHealth: 40
 --- !u!114 &6899669487984000124
 MonoBehaviour:
@@ -3056,6 +3062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageClip: {fileID: 0}
   maxHealth: 40
 --- !u!224 &6914177653927705637
 RectTransform:
@@ -3426,6 +3433,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  attack: {fileID: 0}
 --- !u!50 &8194582352253242885
 Rigidbody2D:
   serializedVersion: 4
@@ -3843,6 +3851,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  attack: {fileID: 0}
 --- !u!50 &8194582353406345021
 Rigidbody2D:
   serializedVersion: 4
@@ -4152,6 +4161,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  attack: {fileID: 0}
 --- !u!50 &8194582353764054361
 Rigidbody2D:
   serializedVersion: 4

@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class VanishingPlatform : MonoBehaviour
 {
-    public float TimeUntilDisappear = 3f;
-    public Color platformSteppedOn;
-    public Color originalColor;
-    public float DelayToActive = 2f;
-
+    [SerializeField] private float TimeUntilDisappear = 3f;
+    [SerializeField] private Color platformSteppedOn;
+    [SerializeField] private Color originalColor;
+    [SerializeField] private float DelayToActive = 2f;
+    [SerializeField] private bool isVanished = false;
+    private BoxCollider2D collider;
 
     private SpriteRenderer renderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        renderer = gameObject.GetComponent<SpriteRenderer>();
+        renderer = GetComponent<SpriteRenderer>();
+        collider = GetComponent<BoxCollider2D>();
         renderer.color = originalColor;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //collider.enabled = isVanished;
         //if(isInactive) 
         // {
         //  var startActive = DelaySetActive();
@@ -31,14 +34,31 @@ public class VanishingPlatform : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    var startInactive = DelaySetInactive();
+    //    isVanished = true;
+
+
+    //    if (collision.gameObject.CompareTag("Player") && isVanished)
+    //    {
+    //        //Debug.Log("Stepped onto vanishing platform.");
+    //        renderer.color = platformSteppedOn;
+    //        this.gameObject.GetComponent<SpriteRenderer>().color = platformSteppedOn;
+    //        StartCoroutine(startInactive);
+    //    }
+    //}
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         var startInactive = DelaySetInactive();
+        isVanished = true;
 
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && isVanished)
         {
-            Debug.Log("Stepped onto vanishing platform.");
+            //Debug.Log("Stepped onto vanishing platform.");
             renderer.color = platformSteppedOn;
             this.gameObject.GetComponent<SpriteRenderer>().color = platformSteppedOn;
             StartCoroutine(startInactive);
@@ -48,18 +68,19 @@ public class VanishingPlatform : MonoBehaviour
     IEnumerator DelaySetInactive()
     {
         yield return new WaitForSeconds(TimeUntilDisappear);
-        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        collider.enabled = false;
         renderer.enabled = false;
         
-        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        //gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
         yield return new WaitForSeconds(DelayToActive);
-        this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+        collider.enabled = true;
         renderer.enabled = true;
 
-        this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        //this.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         renderer.color = originalColor;
- 
         yield return null;
+
+        isVanished = false;
     }
 }
