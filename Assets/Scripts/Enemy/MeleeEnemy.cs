@@ -13,7 +13,7 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private AudioClip attack;
 
     private float cooldownTimer = Mathf.Infinity;
-        private Animator anim;
+    private Animator anim;
     private Player player;
 
     private EnemyPatrol enemyPatrol;
