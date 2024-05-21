@@ -658,8 +658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f16c64c5fdb6264c8d816ec8a9d33e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNextStage: 1
-  scene: Level2-1
+  isNextStage: 0
+  scene: Level1-2
 --- !u!1 &1985019873
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,8 +1254,8 @@ MonoBehaviour:
     m_Bits: 128
   attackRange: 0.5
   attackDamage: 20
-  attackSound: {fileID: 0}
-  attackCooldown: 1.5
+  attackSound: {fileID: 8300000, guid: cb99acd67d8417445ab0fa59fb7e0d5d, type: 3}
+  attackCooldown: 1
 --- !u!4 &36136437303760772
 Transform:
   m_ObjectHideFlags: 0
@@ -1633,7 +1633,9 @@ MonoBehaviour:
   platformSteppedOn: {r: 0.40558362, g: 1, b: 0.06132078, a: 1}
   originalColor: {r: 0, g: 1, b: 0.74361134, a: 1}
   DelayToActive: 1.5
-  isVanished: 0
+  isActive: 1
+  boxCollider: {fileID: 0}
+  circleCollider: {fileID: 0}
 --- !u!61 &2617478762974429971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1835,7 +1837,9 @@ MonoBehaviour:
   platformSteppedOn: {r: 0.40558362, g: 1, b: 0.06132078, a: 1}
   originalColor: {r: 0, g: 1, b: 0.74361134, a: 1}
   DelayToActive: 1.5
-  isVanished: 0
+  isActive: 1
+  boxCollider: {fileID: 0}
+  circleCollider: {fileID: 0}
 --- !u!4 &2617478763146174174
 Transform:
   m_ObjectHideFlags: 0
@@ -1908,7 +1912,9 @@ MonoBehaviour:
   platformSteppedOn: {r: 0.40558362, g: 1, b: 0.06132078, a: 1}
   originalColor: {r: 0, g: 1, b: 0.74361134, a: 1}
   DelayToActive: 1.5
-  isVanished: 0
+  isActive: 1
+  boxCollider: {fileID: 0}
+  circleCollider: {fileID: 0}
 --- !u!61 &2617478763939058454
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2976,7 +2982,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &5795809144474853276
 RectTransform:
@@ -3062,7 +3068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageClip: {fileID: 0}
+  damageClip: {fileID: 8300000, guid: dde13b21415b4c043a2a9cb955111377, type: 3}
   maxHealth: 40
 --- !u!224 &6914177653927705637
 RectTransform:
@@ -4161,7 +4167,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  attack: {fileID: 0}
+  attack: {fileID: 8300000, guid: 778fc69b541e6d84997a9a54cc17d1df, type: 3}
 --- !u!50 &8194582353764054361
 Rigidbody2D:
   serializedVersion: 4
@@ -4583,7 +4589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2267254775949719983, guid: 3f09d6864e8da994e9bc8f9f118f68b2, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2267254775949719983, guid: 3f09d6864e8da994e9bc8f9f118f68b2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4623,6 +4629,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2267254775949719983, guid: 3f09d6864e8da994e9bc8f9f118f68b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649382688395234714, guid: 3f09d6864e8da994e9bc8f9f118f68b2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
