@@ -19,6 +19,7 @@ public class Boss1Movement : MonoBehaviour
     [SerializeField] private bool readyDashLeft = false;
     private float waitOnDashCooldown;
     private Vector3 initScale;
+    [SerializeField] private bool movingLeft;
     [SerializeField] private float idleDuration;
 
 
@@ -28,6 +29,14 @@ public class Boss1Movement : MonoBehaviour
 
     [Header("Boss")]
     [SerializeField] Transform boss;
+
+
+    private void Awake()
+    {
+        //initScale = enemy.localScale;
+
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -45,11 +54,11 @@ public class Boss1Movement : MonoBehaviour
     private void DashInDirection(int _direction)
     {
         waitOnDashCooldown = 0;
-        enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction,
+        boss.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction,
             initScale.y, initScale.z);
 
-        enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
-            enemy.position.y, enemy.position.z);
+        boss.position = new Vector3(boss.position.x + Time.deltaTime * _direction * dashSpeed,
+            boss.position.y, boss.position.z);
     }
 
 
@@ -57,7 +66,7 @@ public class Boss1Movement : MonoBehaviour
     {
         waitOnDashCooldown += Time.deltaTime;
 
-        if (idleTimer > idleDuration)
+        if (waitOnDashCooldown > idleDuration)
             movingLeft = !movingLeft;
     }
 }
