@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class Boss1Movement : MonoBehaviour
 {
+    /*
+     * Having a hard time getting my head around this.
+     * Bascially, Boss needs to do its attack, and its attacks are semi-random
+     * Afterwards, does a large wind-up animation to show it is going to dash
+     * Dashes to end of screen, and does a flurry attack, afterwards
+     * slowly marches back to the beginning and resets itself 
+     * That's it. 
+     * 
+     * Boss also damages player if player steps too far into its collider
+    */
+
+
     [Header("Dash points")]
     [SerializeField] private Transform leftEndpoint;
     [SerializeField] private Transform rightEndpoint;
-
+    public bool readyToDash = false;
 
 
 
@@ -15,8 +27,6 @@ public class Boss1Movement : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashCooldown;
     [SerializeField] private float dashCooldownTimer = Mathf.Infinity;
-    [SerializeField] private bool readyDashRight = true;
-    [SerializeField] private bool readyDashLeft = false;
     private float waitOnDashCooldown;
     private Vector3 initScale;
     [SerializeField] private bool movingLeft;
@@ -33,7 +43,7 @@ public class Boss1Movement : MonoBehaviour
 
     private void Awake()
     {
-        //initScale = enemy.localScale;
+        initScale = boss.localScale;
 
     }
 
@@ -47,26 +57,35 @@ public class Boss1Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(readyToDash)
+        {
+            DashInDirection();
+            readyToDash = false;
+        }
     }
 
 
-    private void DashInDirection(int _direction)
+    private void DashInDirection()
     {
-        waitOnDashCooldown = 0;
-        boss.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction,
-            initScale.y, initScale.z);
+        boss.position = new Vector3(boss.position.x + Time.deltaTime * dashSpeed,
+           boss.position.y, boss.position.z);
 
-        boss.position = new Vector3(boss.position.x + Time.deltaTime * _direction * dashSpeed,
-            boss.position.y, boss.position.z);
     }
 
 
     private void DirectionChange()
     {
-        waitOnDashCooldown += Time.deltaTime;
+        boss.localScale = new Vector3(Mathf.Abs(initScale.x) * -1,
+            initScale.y, initScale.z);
 
-        if (waitOnDashCooldown > idleDuration)
-            movingLeft = !movingLeft;
+       
+    }
+
+
+    public bool ReturnToStart() 
+    {
+        //boss.position = new Vector3(boss)
+
+        return true;
     }
 }

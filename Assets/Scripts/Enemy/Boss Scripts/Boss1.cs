@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Boss1 : MonoBehaviour
 {
-
+    private Boss1Movement movementPattern;
+    private bool standingLeft = true;
 
     [Header("Attack values")]
     [SerializeField] private BoxCollider2D boxCollider;
@@ -17,11 +18,14 @@ public class Boss1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        movementPattern = GetComponentInParent<Boss1Movement>();
+        movementPattern.readyToDash = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
     }
 
 
