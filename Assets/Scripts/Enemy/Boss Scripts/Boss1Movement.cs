@@ -78,6 +78,8 @@ public class Boss1Movement : MonoBehaviour
         boss.localScale = new Vector3(Mathf.Abs(initScale.x) * -1,
             initScale.y, initScale.z);
 
+        var x = 10;
+
        
     }
 
