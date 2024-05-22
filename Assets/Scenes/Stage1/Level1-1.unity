@@ -3059,7 +3059,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1039287304635713972, guid: 784fcd979250aab45bb254e4a234db16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.434
+      value: 0.553
       objectReference: {fileID: 0}
     - target: {fileID: 1039287304635713972, guid: 784fcd979250aab45bb254e4a234db16, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4183,7 +4183,7 @@ MonoBehaviour:
     m_Bits: 128
   attackRange: 0.5
   attackDamage: 20
-  attackSound: {fileID: 8300000, guid: cb99acd67d8417445ab0fa59fb7e0d5d, type: 3}
+  attackSound: {fileID: 8300000, guid: 98b846595648ece4ea5be0ee39b5b559, type: 3}
   attackCooldown: 1
 --- !u!4 &36136437303760772
 Transform:
