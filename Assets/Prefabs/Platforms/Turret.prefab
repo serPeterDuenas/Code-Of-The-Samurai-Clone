@@ -543,6 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526077b52393f624a914ae40e7b84b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 8300000, guid: 94a36a5733a1efc4a853de2f2c4188a8, type: 3}
   bullets:
   - {fileID: 6229057819032707106}
   - {fileID: 4317222852991380121}

@@ -6,13 +6,11 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Player : MonoBehaviour
 {
-
-    [Header("Health attributes")]
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int CurrentHealth = 0;
-
     [SerializeField] private LivesManager livesManager;
+    [SerializeField] private AudioClip damageSound;
     private bool isDead = false;
 
     
@@ -22,7 +20,7 @@ public class Player : MonoBehaviour
     {
         CurrentHealth -= damageValue;
         healthBar.SetHealth(CurrentHealth);
-
+        SoundManager.thisInstance.PlaySound(damageSound);
 
         if (CurrentHealth <= 0 )
         {

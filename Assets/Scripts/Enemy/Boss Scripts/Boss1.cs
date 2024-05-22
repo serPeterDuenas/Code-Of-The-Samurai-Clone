@@ -2,14 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss1 : MonoBehaviour
 {
-    [Header("Dash values")]
-    [SerializeField] private Transform endpoint1;
-    [SerializeField] private Transform endpoint2;
-    [SerializeField] private float dashSpeed;
-    [SerializeField] private float dashCooldown;
-    [SerializeField] private float dashCooldownTimer = Mathf.Infinity;
 
 
     [Header("Attack values")]
@@ -23,12 +17,20 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
+
+
+
+    private void DashRight()
+    {
+        //transform.position 
+    }
+
+
+    private void DashLeft() { }
 }
