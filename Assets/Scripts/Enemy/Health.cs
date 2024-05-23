@@ -8,8 +8,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] bool isBoss;
-    [SerializeField] private HealthBar healthBar;
 
 
     [SerializeField] private AudioClip damageClip;
@@ -21,10 +19,6 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        if(isBoss) 
-        {
-            healthBar.SetMaxHealth(maxHealth);
-        }
     }
 
     // Update is called once per frame
@@ -38,13 +32,6 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damage;
         SoundManager.thisInstance.PlaySound(damageClip);
-
-        if (isBoss)
-        {
-            healthBar.SetHealth(currentHealth);
-        }
-        else
-            return;
         
 
         if (currentHealth <= 0)
