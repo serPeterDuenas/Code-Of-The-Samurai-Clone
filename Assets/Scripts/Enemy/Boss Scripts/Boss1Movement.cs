@@ -48,7 +48,7 @@ public class Boss1Movement : MonoBehaviour
                 DirectionChange();
             }
         }
-        else
+        else if (readyToDash)
         {
             if (boss.position.x <= rightEndpoint.position.x)
                 MoveInDirection(1);
