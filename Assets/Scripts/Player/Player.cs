@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private int maxHealth = 100;
-    [SerializeField] private int CurrentHealth = 0;
+    [SerializeField] private int currentHealth = 0;
     [SerializeField] private LivesManager livesManager;
     [SerializeField] private AudioClip damageSound;
     private bool isDead = false;
@@ -18,11 +18,11 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damageValue)
     {
-        CurrentHealth -= damageValue;
-        healthBar.SetHealth(CurrentHealth);
+        currentHealth -= damageValue;
+        healthBar.SetHealth(currentHealth);
         SoundManager.thisInstance.PlaySound(damageSound);
 
-        if (CurrentHealth <= 0 )
+        if (currentHealth <= 0 )
         {
             KillPlayer();
         }
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         healthBar = FindObjectOfType<HealthBar>();
-        CurrentHealth = maxHealth;
+        currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         livesManager = FindObjectOfType<LivesManager>();
     }
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 
     private void Respawn()
     {
-        CurrentHealth = maxHealth;
+        currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         
         //var scene = SceneManager.GetActiveScene();
@@ -66,6 +66,8 @@ public class Player : MonoBehaviour
             Respawn();
             isDead = false;
         }
+
+        //healthBar.SetHealth(currentHealth);
 
     }
 

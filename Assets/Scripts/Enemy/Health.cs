@@ -8,15 +8,23 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [SerializeField] bool isBoss;
+    [SerializeField] private HealthBar healthBar;
+
+
     [SerializeField] private AudioClip damageClip;
     [SerializeField] private int maxHealth = 100;
-    private int currentHealth = 0;
+    public int currentHealth = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        if(isBoss) 
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
     }
 
     // Update is called once per frame
@@ -28,9 +36,16 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        SoundManager.thisInstance.PlaySound(damageClip);
         currentHealth -= damage;
-        //Debug.Log("I took damage! -- enemy");
+        SoundManager.thisInstance.PlaySound(damageClip);
+
+        if (isBoss)
+        {
+            healthBar.SetHealth(currentHealth);
+        }
+        else
+            return;
+        
 
         if (currentHealth <= 0)
         {
