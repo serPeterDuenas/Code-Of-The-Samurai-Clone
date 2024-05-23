@@ -234,7 +234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
+  healthBar: {fileID: 0}
+  damageClip: {fileID: 8300000, guid: ef3fc61ae659a924dbe849a1e67fe610, type: 3}
   maxHealth: 40
+  currentHealth: 0
 --- !u!114 &8194582352150514581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +259,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  maxHealth: 100
+  attack: {fileID: 8300000, guid: 778fc69b541e6d84997a9a54cc17d1df, type: 3}
 --- !u!95 &8194582352150514570
 Animator:
   serializedVersion: 5

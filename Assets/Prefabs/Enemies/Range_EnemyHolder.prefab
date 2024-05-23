@@ -309,7 +309,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
+  healthBar: {fileID: 0}
+  damageClip: {fileID: 8300000, guid: 98b846595648ece4ea5be0ee39b5b559, type: 3}
   maxHealth: 30
+  currentHealth: 0
 --- !u!114 &929806629985133451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,10 +334,11 @@ MonoBehaviour:
   bulletPosition: {fileID: 929806630214419252}
   respawnTime: 4
   facingLeft: 0
+  damage: 5
   attackCooldown: 2
+  projectile: {fileID: 8300000, guid: 5f75ea5612507884d94bdda8aec2e476, type: 3}
   range: 6.03
   colliderDistance: 0.62
-  damage: 5
   boxCollider: {fileID: 929806629985133453}
   playerLayer:
     serializedVersion: 2
