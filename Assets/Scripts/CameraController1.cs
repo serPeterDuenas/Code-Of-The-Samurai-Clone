@@ -7,12 +7,14 @@ public class CameraController1 : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private float aheadDistance;
     [SerializeField] private float cameraSpeed;
+    private Camera camera;
     private float lookAhead;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       //camera = GetComponent<Camera>();
+       //camera.backgroundColor=Color.red;
     }
 
     // Update is called once per frame
