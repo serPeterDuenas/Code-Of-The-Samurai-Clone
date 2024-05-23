@@ -19,7 +19,7 @@ public class Boss1 : MonoBehaviour
     void Start()
     {
         movementPattern = GetComponentInParent<Boss1Movement>();
-        movementPattern.readyToDash = true;
+        //movementPattern.readyToDash = true;
     }
 
     // Update is called once per frame
