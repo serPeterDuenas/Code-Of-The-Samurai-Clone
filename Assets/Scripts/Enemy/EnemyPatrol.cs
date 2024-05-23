@@ -20,15 +20,7 @@ public class EnemyPatrol : MonoBehaviour
     private float idleTimer;
 
 
-    private void MoveInDirection(int _direction)
-    {
-        idleTimer = 0;
-        enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction,
-            initScale.y, initScale.z);
-
-        enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
-            enemy.position.y, enemy.position.z);
-    }
+    
 
 
     private void Awake()
@@ -63,6 +55,16 @@ public class EnemyPatrol : MonoBehaviour
                 DirectionChange();
             }
         }
+    }
+
+    private void MoveInDirection(int _direction)
+    {
+        idleTimer = 0;
+        enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction,
+            initScale.y, initScale.z);
+
+        enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
+            enemy.position.y, enemy.position.z);
     }
 
 
