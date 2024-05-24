@@ -43,6 +43,12 @@ public class MusicManager : MonoBehaviour
        
     }
 
+    public void PlayMusic(AudioClip audio)
+    {
+        source.PlayOneShot(audio);
+
+    }
+
     public void StopMusic()
     {
         if (source.isPlaying)

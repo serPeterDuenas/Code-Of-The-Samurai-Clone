@@ -62,6 +62,10 @@ public class LevelManager : MonoBehaviour
         {
             currentStage = 6;
         }
+        else if (scene.name == "GameOverScreen")
+        {
+            currentStage = 7;
+        }
         else
             return;
 

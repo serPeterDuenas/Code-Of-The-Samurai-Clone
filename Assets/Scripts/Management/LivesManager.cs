@@ -8,8 +8,8 @@ public class LivesManager : MonoBehaviour
 {
     //private GameManager gameManager;
     private int currentLives;
-    [SerializeField] private GameObject gameOverScreen;
-    [SerializeField] private float waitOnSecondsMenu;
+    //[SerializeField] private GameObject gameOverScreen;
+    //[SerializeField] private float waitOnSecondsMenu;
     //[SerializeField] private string mainMenuSceneName;
 
     private Text playerLivesText;
@@ -48,37 +48,23 @@ public class LivesManager : MonoBehaviour
 
         if (currentLives == 0)
         {
-            gameOverScreen.SetActive(true);
+            LoadGameOver();
+            //gameOverScreen.SetActive(true);
         }
 
         playerLivesText.text = "Current lives: " + currentLives;
 
-        if (gameOverScreen.activeInHierarchy)
-        {
-            waitOnSecondsMenu -= Time.deltaTime;
-           
-        }
-
-        if (waitOnSecondsMenu <= 0)
-        {
-            GameManager.playerDead = true;
-            gameOverScreen.SetActive(false);
-            LoadMenu();
-
             //Debug.Log(GameManager.playerDead);
             //Destroy(gameObject);
-        }
-
-
-        
-
     }
 
-    public void LoadMenu()
+
+
+    public void LoadGameOver()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("GameOverScreen");
         LevelManager.thisInstance.CheckStage();
-        ExitDoor.currentStage = 1;
+        ExitDoor.currentStage = 7;
 
         
     }

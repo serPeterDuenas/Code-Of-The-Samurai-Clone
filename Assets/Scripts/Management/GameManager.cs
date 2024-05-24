@@ -63,20 +63,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (thisScene == null)
-        {
-            thisScene = GameObject.FindGameObjectWithTag("Level");
-        }
-        else
-            return;
+        //if (thisScene == null)
+        //{
+        //    thisScene = GameObject.FindGameObjectWithTag("Level");
+        //}
+        //else
+        //    return;
 
 
         if (currentPlayerLives <= 0 && playerDead)
         {
-            //LoadMenu();
-            currentPlayerLives = playerLives;
-            //thisScene.SetActive(false);
-
+            //currentPlayerLives = playerLives;
             var scene = SceneManager.GetActiveScene();
             currentScene = scene.name;
 
@@ -87,6 +84,12 @@ public class GameManager : MonoBehaviour
             return;
         
         //Debug.Log(playerDead);
+    }
+
+
+    public void ResetLives()
+    {
+        currentPlayerLives = playerLives;
     }
 
 
@@ -103,15 +106,15 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void LoadMenu()
-    {
-        SceneManager.LoadScene(mainMenuSceneName);
-        LevelManager.thisInstance.CheckStage();
-        ExitDoor.currentStage = 1;
+    //public void LoadMenu()
+    //{
+    //    SceneManager.LoadScene(mainMenuSceneName);
+    //    LevelManager.thisInstance.CheckStage();
+    //    ExitDoor.currentStage = 1;
 
-        var scene = SceneManager.GetActiveScene();
-        currentScene = scene.name;
-    }
+    //    var scene = SceneManager.GetActiveScene();
+    //    currentScene = scene.name;
+    //}
 
 
     private void PlayMusic()
