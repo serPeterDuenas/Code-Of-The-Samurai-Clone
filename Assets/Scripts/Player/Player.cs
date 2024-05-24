@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
         if (currentHealth <= 0 )
         {
-            KillPlayer();
+            //KillPlayer();
         }
     }
 
@@ -38,9 +38,10 @@ public class Player : MonoBehaviour
 
     public void KillPlayer()
     {
-        Respawn();
-        livesManager.UpdateLives();
-        GameManager.thisInstance.ResetScene();
+        
+        //Respawn();
+        //livesManager.UpdateLives();
+        //GameManager.thisInstance.ResetScene();
     }
 
 
@@ -61,13 +62,13 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(isDead)
+        if (isDead)
         {
-            Respawn();
+            //Respawn();
             isDead = false;
         }
-
-        //healthBar.SetHealth(currentHealth);
+        else
+            return;
 
     }
 

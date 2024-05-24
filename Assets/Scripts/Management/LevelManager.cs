@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
     public void CheckStage()
     {
         var scene = SceneManager.GetActiveScene();
-        Debug.Log(scene.name);
+        //Debug.Log(scene.name);
 
         if (scene.name == "MainMenu")
         {
@@ -65,8 +65,8 @@ public class LevelManager : MonoBehaviour
         else
             return;
 
-        Debug.Log(currentStage);
-        Debug.Log(scene.name);
+        //Debug.Log(currentStage);
+        //Debug.Log(scene.name);
 
         PlayStageMusic();
     }
@@ -93,7 +93,7 @@ public class LevelManager : MonoBehaviour
         MusicManager.thisInstance.PlayMusic(currentStage);
 
         var scene = SceneManager.GetActiveScene();
-        Debug.Log(currentStage);
-        Debug.Log(scene.name);
+        //Debug.Log(currentStage);
+        //Debug.Log(scene.name);
     }    
 }

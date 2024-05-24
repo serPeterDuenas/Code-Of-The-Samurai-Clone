@@ -17,13 +17,13 @@ public class GameManager : MonoBehaviour
     public static bool playerDead = false;
     public static bool goingToNextScene = false;
     [SerializeField] private string currentScene;
-    //private string scene;
+    [SerializeField] private GameObject thisScene;
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        //Debug.Log("PLayert lives Gamemanager " + playerLives);
+        thisScene = GameObject.FindGameObjectWithTag("Level");
 
 
 
@@ -63,13 +63,24 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (thisScene == null)
+        {
+            thisScene = GameObject.FindGameObjectWithTag("Level");
+        }
+        else
+            return;
 
-        if (currentPlayerLives == 0 && playerDead)
+
+        if (currentPlayerLives <= 0 && playerDead)
         {
             //LoadMenu();
             currentPlayerLives = playerLives;
+            //thisScene.SetActive(false);
 
-            LoadMenu();
+            var scene = SceneManager.GetActiveScene();
+            currentScene = scene.name;
+
+            //LoadMenu();
             playerDead = false;
         }
         else
@@ -83,7 +94,9 @@ public class GameManager : MonoBehaviour
     {
         hasInit = true;
         currentPlayerLives--;
-        
+        //Debug.Log(GameManager.currentPlayerLives);
+        //Debug.Log("Lives of player current");
+
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         currentScene = scene.name;

@@ -59,15 +59,27 @@ public class LivesManager : MonoBehaviour
            
         }
 
-        if (waitOnSecondsMenu < 0)
+        if (waitOnSecondsMenu <= 0)
         {
-            gameOverScreen.SetActive(false);
             GameManager.playerDead = true;
+            gameOverScreen.SetActive(false);
+            LoadMenu();
+
             //Debug.Log(GameManager.playerDead);
             //Destroy(gameObject);
         }
 
 
+        
 
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        LevelManager.thisInstance.CheckStage();
+        ExitDoor.currentStage = 1;
+
+        
     }
 }
