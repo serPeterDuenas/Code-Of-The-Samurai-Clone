@@ -234,9 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBoss: 0
-  healthBar: {fileID: 0}
-  damageClip: {fileID: 8300000, guid: ef3fc61ae659a924dbe849a1e67fe610, type: 3}
+  damageClip: {fileID: 8300000, guid: 778fc69b541e6d84997a9a54cc17d1df, type: 3}
   maxHealth: 40
   currentHealth: 0
 --- !u!114 &8194582352150514581
@@ -305,7 +303,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8194582352266779099}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.05, y: 4.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
