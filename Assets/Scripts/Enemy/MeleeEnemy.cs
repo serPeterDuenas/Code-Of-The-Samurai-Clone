@@ -43,7 +43,7 @@ public class MeleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 //Debug.Log("I am going to attack");
-                anim.SetTrigger("MeleeAttack");
+                anim.SetTrigger("Attack");
                 SoundManager.thisInstance.PlaySound(attack);
             }
         }
