@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeEnemy : MonoBehaviour
+public class BigEnemy : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
@@ -28,7 +28,7 @@ public class MeleeEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class MeleeEnemy : MonoBehaviour
             }
         }
 
-        if(enemyPatrol != null)
+        if (enemyPatrol != null)
         {
             enemyPatrol.enabled = !PlayerInSight();
         }
@@ -62,7 +62,7 @@ public class MeleeEnemy : MonoBehaviour
             boxCollider.bounds.size.y, boxCollider.bounds.size.z),
             0, Vector2.left, 0, playerLayer);
 
-        if(hit.collider != null) 
+        if (hit.collider != null)
         {
             player = hit.transform.GetComponent<Player>();
         }
