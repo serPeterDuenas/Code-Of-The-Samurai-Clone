@@ -15,10 +15,12 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private AudioClip attackSound;
     [SerializeField] private float attackCooldown = 1.5f;
     private float cooldownTimer = Mathf.Infinity;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,9 +29,10 @@ public class PlayerAttack : MonoBehaviour
         cooldownTimer += Time.deltaTime;
 
         // Checks if player is attacking
-        if (Input.GetMouseButtonDown(0) && cooldownTimer >= attackCooldown)
+        if (Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown)
         {
-            cooldownTimer = 0;
+            Debug.Log("Im attacking");
+            //cooldownTimer += Time.deltaTime;
             Attack();
         }
     }
@@ -38,6 +41,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        anim.SetTrigger("Attack");
+        cooldownTimer = 0;
+
+
+        Debug.Log("animation called");
         SoundManager.thisInstance.PlaySound(attackSound);
         //Debug.Log("Attacking -- player");
 
@@ -51,6 +59,9 @@ public class PlayerAttack : MonoBehaviour
             //if(enemy.gameObject.tag == "Range")
                 enemy.GetComponent<Health>().TakeDamage(attackDamage);
         }
+
+
+        //anim.SetBool("Attack", false);
     }
 
 
