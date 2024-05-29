@@ -31,6 +31,7 @@ public class PlayerAttack : MonoBehaviour
         // Checks if player is attacking
         if (Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown)
         {
+            Debug.Log("Im attacking");
             //cooldownTimer += Time.deltaTime;
             Attack();
         }
@@ -42,6 +43,8 @@ public class PlayerAttack : MonoBehaviour
     {
         anim.SetTrigger("Attack");
         cooldownTimer = 0;
+
+
         Debug.Log("animation called");
         SoundManager.thisInstance.PlaySound(attackSound);
         //Debug.Log("Attacking -- player");

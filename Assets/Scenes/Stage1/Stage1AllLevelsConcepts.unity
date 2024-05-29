@@ -285,7 +285,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 570af242d4d247e469db93d72cbbf12e, type: 3}
     - target: {fileID: 2029383484419909469, guid: 8877c055556da6c4399c27022d6a0a65, type: 3}
       propertyPath: attackCooldown
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2029383484746733004, guid: 8877c055556da6c4399c27022d6a0a65, type: 3}
       propertyPath: m_IsActive
