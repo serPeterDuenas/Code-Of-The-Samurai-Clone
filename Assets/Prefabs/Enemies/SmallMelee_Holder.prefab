@@ -55,7 +55,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8661069477856607658}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.379612, y: 11.49, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   leftEdge: {fileID: 8661069478437741457}
   rightEdge: {fileID: 8661069478425586328}
   enemy: {fileID: 8661069477972602848}
-  speed: 5
+  speed: 10
   movingLeft: 0
   idleDuration: 1
 --- !u!1 &8661069477972602850
