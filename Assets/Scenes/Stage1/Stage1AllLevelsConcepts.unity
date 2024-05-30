@@ -192,6 +192,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 365688754603300835, guid: 279414fe0fe7c4b4fa4394674f1a2e96, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 365688754603300835, guid: 279414fe0fe7c4b4fa4394674f1a2e96, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7226979535753253486, guid: 279414fe0fe7c4b4fa4394674f1a2e96, type: 3}
       propertyPath: player
       value: 
@@ -243,6 +251,10 @@ PrefabInstance:
     - target: {fileID: 8360188277043029608, guid: 279414fe0fe7c4b4fa4394674f1a2e96, type: 3}
       propertyPath: m_Name
       value: Level1-1 - Sergio
+      objectReference: {fileID: 0}
+    - target: {fileID: 8360188277043029608, guid: 279414fe0fe7c4b4fa4394674f1a2e96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 279414fe0fe7c4b4fa4394674f1a2e96, type: 3}
