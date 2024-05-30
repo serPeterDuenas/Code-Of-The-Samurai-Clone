@@ -12,10 +12,10 @@ public class Turret : MonoBehaviour
 
     [SerializeField] private GameObject[] bullets;
     [SerializeField] private Transform bulletPosition;
-    [SerializeField] private float respawnTime = 4;
+    [SerializeField] private float timeBetweenShots = 4f;
     [SerializeField] bool facingLeft = false;
     public int damage;
-    private float timer = Mathf.Infinity;
+    [SerializeField] private float timerToShoot = 1.5f;
     private int direction;
 
 
@@ -39,11 +39,11 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        delayToShoot += Time.deltaTime;
 
-        if(timer >= respawnTime)
+        if(delayToShoot >= respawnTime)
         {
-            timer = 0;
+            delayToShoot = 0;
             Shoot();
         }
     }
