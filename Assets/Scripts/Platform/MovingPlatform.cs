@@ -107,6 +107,9 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            collision.transform.SetParent(this.transform);
+
+
             player.isOnPlatform = true;
             player.platformRB = rb;
             playerRB.gravityScale = playerRB.gravityScale * 50;
@@ -118,6 +121,8 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            collision.transform.SetParent(null);
+
             player.isOnPlatform = false;
             playerRB.gravityScale = playerRB.gravityScale / 50;
             Debug.Log("Off platform");

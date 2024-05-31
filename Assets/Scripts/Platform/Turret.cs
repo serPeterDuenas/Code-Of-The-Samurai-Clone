@@ -39,11 +39,11 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        delayToShoot += Time.deltaTime;
+        timerToShoot += Time.deltaTime;
 
-        if(delayToShoot >= respawnTime)
+        if(timerToShoot >= timeBetweenShots)
         {
-            delayToShoot = 0;
+            timerToShoot = 0;
             Shoot();
         }
     }
