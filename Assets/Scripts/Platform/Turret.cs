@@ -15,7 +15,11 @@ public class Turret : MonoBehaviour
     [SerializeField] private float timeBetweenShots = 4f;
     [SerializeField] bool facingLeft = false;
     public int damage;
-    [SerializeField] private float timerToShoot = 1.5f;
+
+    // Set this float closer but below the value of "timeBetweenShots"
+    // to make Bullet spawn faster upon loading scene
+    [SerializeField] private float initialDelay = 1.5f;
+
     private int direction;
 
 
@@ -39,11 +43,11 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerToShoot += Time.deltaTime;
+        initialDelay += Time.deltaTime;
 
-        if(timerToShoot >= timeBetweenShots)
+        if(initialDelay >= timeBetweenShots)
         {
-            timerToShoot = 0;
+            initialDelay = 0;
             Shoot();
         }
     }

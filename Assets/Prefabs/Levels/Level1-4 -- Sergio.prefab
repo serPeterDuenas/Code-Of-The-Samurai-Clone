@@ -3846,8 +3846,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 8892557577019220782}
   pointB: {fileID: 8892557575896682673}
-  moveSpeed: 15
-  pauseDelay: 0.3
+  moveSpeed: 12
+  pauseDelay: 0.5
 --- !u!61 &8892557576239060137
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3917,7 +3917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8892557576313511440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.9, y: 16.66, z: 0}
+  m_LocalPosition: {x: -12.75, y: 16.63, z: 0}
   m_LocalScale: {x: 3, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4220,7 +4220,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8892557576527944485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.81, y: 13.35, z: 0}
+  m_LocalPosition: {x: -6.63, y: 13.28, z: 0}
   m_LocalScale: {x: 3, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4956,8 +4956,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 8892557576568880312}
   pointB: {fileID: 8892557575524523019}
-  moveSpeed: 13
-  pauseDelay: 0.5
+  moveSpeed: 12
+  pauseDelay: 1
 --- !u!61 &8892557576829942600
 BoxCollider2D:
   m_ObjectHideFlags: 0

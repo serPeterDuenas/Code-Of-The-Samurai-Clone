@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed;
     public int damage;
     private float lifetime;
-    private float bulletDuration = 5;
+    [SerializeField] private float bulletDuration = 3.5f;
     //private Animator anim;
     private BoxCollider2D coll;
     private Player player;
