@@ -6983,7 +6983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isNextStage: 0
-  scene: 
+  scene: Level2-1
 --- !u!1 &5112417697012039699
 GameObject:
   m_ObjectHideFlags: 0
