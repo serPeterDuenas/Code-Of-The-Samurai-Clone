@@ -58,33 +58,68 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        moveDirection = (int)Input.GetAxisRaw("Horizontal");
-
-        // Checks the player's facing direction, and rotates their position accordingly
-        if (moveDirection > 0 && isFacingRight)
+        if(!PauseScreen.isPaused) 
         {
-            Flip();
-        }
-        if (moveDirection < 0 && !isFacingRight)
-        {
-            Flip();
-        }
+            moveDirection = (int)Input.GetAxisRaw("Horizontal");
+
+            // Checks the player's facing direction, and rotates their position accordingly
+            if (moveDirection > 0 && isFacingRight)
+            {
+                Flip();
+            }
+            if (moveDirection < 0 && !isFacingRight)
+            {
+                Flip();
+            }
 
 
-        if (moveDirection != 0)
-        {
-            moveX = Mathf.MoveTowards(moveX, moveDirection * moveSpeed, Time.deltaTime * acceleration);
+            if (moveDirection != 0)
+            {
+                moveX = Mathf.MoveTowards(moveX, moveDirection * moveSpeed, Time.deltaTime * acceleration);
+            }
+            else
+            // this stops player's movement as soon as player stops pressing the move buttons
+            {
+                moveX = 0;
+            }
+
+            if (Input.GetButtonDown("Jump") && isGrounded())
+            {
+                Jump();
+            }
         }
         else
-        // this stops player's movement as soon as player stops pressing the move buttons
         {
-            moveX = 0;
+            return;
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded())
-        {
-            Jump();
-        }
+        //moveDirection = (int)Input.GetAxisRaw("Horizontal");
+
+        //// Checks the player's facing direction, and rotates their position accordingly
+        //if (moveDirection > 0 && isFacingRight)
+        //{
+        //    Flip();
+        //}
+        //if (moveDirection < 0 && !isFacingRight)
+        //{
+        //    Flip();
+        //}
+
+
+        //if (moveDirection != 0)
+        //{
+        //    moveX = Mathf.MoveTowards(moveX, moveDirection * moveSpeed, Time.deltaTime * acceleration);
+        //}
+        //else
+        //// this stops player's movement as soon as player stops pressing the move buttons
+        //{
+        //    moveX = 0;
+        //}
+
+        //if (Input.GetButtonDown("Jump") && isGrounded())
+        //{
+        //    Jump();
+        //}
 
 
     }

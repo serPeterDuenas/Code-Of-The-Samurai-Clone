@@ -9,6 +9,7 @@ TagManager:
   - Range
   - Melee
   - Boss
+  - Pause
   layers:
   - Default
   - TransparentFX

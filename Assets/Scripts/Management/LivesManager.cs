@@ -8,10 +8,11 @@ public class LivesManager : MonoBehaviour
 {
     //private GameManager gameManager;
     private int currentLives;
-    //[SerializeField] private GameObject gameOverScreen;
+   
     //[SerializeField] private float waitOnSecondsMenu;
     //[SerializeField] private string mainMenuSceneName;
 
+    private bool timeStopped = false;
     private Text playerLivesText;
     
 
@@ -22,13 +23,11 @@ public class LivesManager : MonoBehaviour
     void Start()
     {
         playerLivesText = GetComponent<Text>();
-        //gameOverScreen = FindObjectOfType<GameOver>
     }
 
     private void Awake()
     {
         currentLives = GameManager.currentPlayerLives;
-
     }
 
 
@@ -45,6 +44,8 @@ public class LivesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
 
         if (currentLives == 0)
         {

@@ -28,14 +28,30 @@ public class PlayerAttack : MonoBehaviour
     {
         cooldownTimer += Time.deltaTime;
 
-        // Checks if player is attacking
-        if (Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown)
+        if(!PauseScreen.isPaused)
         {
-            //Debug.Log("Im attacking");
-            //cooldownTimer += Time.deltaTime;
-            //Attack();
-            anim.SetBool("Attacking", true);
+            // Checks if player is attacking
+            if (Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown)
+            {
+                //Debug.Log("Im attacking");
+                //cooldownTimer += Time.deltaTime;
+                //Attack();
+                anim.SetBool("Attacking", true);
+            }
         }
+        else
+        {
+            return;
+        }
+
+        //// Checks if player is attacking
+        //if (Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown)
+        //{
+        //    //Debug.Log("Im attacking");
+        //    //cooldownTimer += Time.deltaTime;
+        //    //Attack();
+        //    anim.SetBool("Attacking", true);
+        //}
     }
 
 
