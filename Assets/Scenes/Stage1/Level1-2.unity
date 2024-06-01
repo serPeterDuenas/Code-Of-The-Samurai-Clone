@@ -199,14 +199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1107125407906443491, guid: 0f8fd2361f9f7674baae3c245f7e00d6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107125407906443491, guid: 0f8fd2361f9f7674baae3c245f7e00d6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 14.1
-      objectReference: {fileID: 0}
     - target: {fileID: 2675067115712879221, guid: 0f8fd2361f9f7674baae3c245f7e00d6, type: 3}
       propertyPath: m_Name
       value: Level1-2 Prefab -- Sergio
