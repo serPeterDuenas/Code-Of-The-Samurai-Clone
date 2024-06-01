@@ -31,9 +31,10 @@ public class PlayerAttack : MonoBehaviour
         // Checks if player is attacking
         if (Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown)
         {
-            Debug.Log("Im attacking");
+            //Debug.Log("Im attacking");
             //cooldownTimer += Time.deltaTime;
-            Attack();
+            //Attack();
+            anim.SetBool("Attacking", true);
         }
     }
 
@@ -41,9 +42,9 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        anim.SetTrigger("Attack");
+        //anim.SetTrigger("Attack");
         cooldownTimer = 0;
-
+        //anim.SetBool("IsAttacking", false);
 
         Debug.Log("animation called");
         SoundManager.thisInstance.PlaySound(attackSound);
@@ -52,18 +53,25 @@ public class PlayerAttack : MonoBehaviour
         // Detect if enemy is in the attack radius
         Collider2D[] enemyCheck = Physics2D.OverlapCircleAll(weapon.position, attackRange, enemyLayerCheck);
 
-        // Damage enemy
+        // Damage enemy 
 
         foreach (Collider2D enemy in enemyCheck)
         {
+            Debug.Log("Calling TakeDamage from Player Attack");
             //if(enemy.gameObject.tag == "Range")
-                enemy.GetComponent<Health>().TakeDamage(attackDamage);
+            enemy.GetComponent<Health>().TakeDamage(attackDamage);
+            Debug.Log("Calling TakeDamage from Player Attack");
         }
 
 
         //anim.SetBool("Attack", false);
     }
 
+
+    public void EndAttack()
+    {
+        anim.SetBool("Attacking", false);
+    }
 
 
 
