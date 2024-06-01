@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 5
+  bulletDuration: 3.5
 --- !u!1 &929806629790583099
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +286,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929806629985133442}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -310,7 +311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShielded: 0
   damageClip: {fileID: 8300000, guid: 98b846595648ece4ea5be0ee39b5b559, type: 3}
+  shieldBreakClip: {fileID: 0}
   maxHealth: 30
   currentHealth: 0
 --- !u!114 &929806629985133451
@@ -370,7 +373,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929806629985133442}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -515,6 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 5
+  bulletDuration: 3.5
 --- !u!1 &929806630214419253
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +574,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929806630307193828}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.24, y: 1.31, z: -0.2878217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -725,6 +729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 5
+  bulletDuration: 3.5
 --- !u!1 &929806630720826746
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 5
+  bulletDuration: 3.5
 --- !u!1 &929806631163953959
 GameObject:
   m_ObjectHideFlags: 0
