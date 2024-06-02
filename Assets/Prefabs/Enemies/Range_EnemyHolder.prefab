@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 5
-  bulletDuration: 3.5
+  damage: 20
+  bulletDuration: 1
 --- !u!1 &929806629790583099
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,8 +517,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 5
-  bulletDuration: 3.5
+  damage: 20
+  bulletDuration: 1
 --- !u!1 &929806630214419253
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,8 +728,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 5
-  bulletDuration: 3.5
+  damage: 20
+  bulletDuration: 1
 --- !u!1 &929806630720826746
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,8 +886,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 5
-  bulletDuration: 3.5
+  damage: 20
+  bulletDuration: 1
 --- !u!1 &929806631163953959
 GameObject:
   m_ObjectHideFlags: 0
