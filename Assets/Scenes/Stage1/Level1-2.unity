@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1-2 Prefab -- Sergio
       objectReference: {fileID: 0}
+    - target: {fileID: 2675067115712879221, guid: 0f8fd2361f9f7674baae3c245f7e00d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2675067115712879226, guid: 0f8fd2361f9f7674baae3c245f7e00d6, type: 3}
       propertyPath: m_RootOrder
       value: 0
