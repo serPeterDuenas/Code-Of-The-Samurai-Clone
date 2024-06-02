@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     {
         thisScene = GameObject.FindGameObjectWithTag("Level");
 
-
+        //PlayMusic();
 
         if (!hasInit)
         {
@@ -119,6 +119,8 @@ public class GameManager : MonoBehaviour
 
     private void PlayMusic()
     {
+        LevelManager.thisInstance.CheckStage();
+        LevelManager.thisInstance.PlayStageMusic();
 
     }
 }

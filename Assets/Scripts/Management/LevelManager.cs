@@ -42,29 +42,25 @@ public class LevelManager : MonoBehaviour
         {
             currentStage = 1;
         }
-        else if (scene.name == "Boss1")
-        {
-            currentStage = 2;
-        }
+
         else if (scene.name == "Level2-1")
         {
-           currentStage = 3;
+           currentStage = 2;
         }
-        else if (scene.name == "Boss2")
+      
+        else if (scene.name == "Level3-1")
+        {
+            currentStage = 3;
+        }
+        
+        else if (scene.name == "GameOverScreen")
         {
             currentStage = 4;
         }
-        else if (scene.name == "Level3-1")
+
+        else if (scene.name == "EndScreen")
         {
             currentStage = 5;
-        }
-        else if (scene.name == "Boss3")
-        {
-            currentStage = 6;
-        }
-        else if (scene.name == "GameOverScreen")
-        {
-            currentStage = 7;
         }
         else
             return;
