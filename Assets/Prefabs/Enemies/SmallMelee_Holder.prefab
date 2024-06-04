@@ -238,7 +238,7 @@ MonoBehaviour:
   isShielded: 0
   damageClip: {fileID: 8300000, guid: ef3fc61ae659a924dbe849a1e67fe610, type: 3}
   shieldBreakClip: {fileID: 0}
-  maxHealth: 40
+  maxHealth: 15
   currentHealth: 0
 --- !u!114 &8661069477972602852
 MonoBehaviour:
@@ -252,10 +252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69149fc28fcdf447986098ec60eb4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
+  attackCooldown: 0.8
   range: 1.5
   colliderDistance: 0.8
-  damage: 2
+  damage: 10
   boxCollider: {fileID: 8661069477972602854}
   playerLayer:
     serializedVersion: 2
