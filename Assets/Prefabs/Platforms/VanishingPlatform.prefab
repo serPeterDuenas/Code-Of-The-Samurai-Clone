@@ -127,10 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de8a7a04dbfc354f9ff3fd6584fce9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeUntilDisappear: 3
+  TimeUntilDisappear: 1.5
   platformSteppedOn: {r: 1, g: 0.030305527, b: 0, a: 1}
   originalColor: {r: 0, g: 1, b: 0.74361134, a: 1}
-  DelayToActive: 2
+  DelayToActive: 1
   isActive: 1
   boxCollider: {fileID: 5303348722078999418}
   circleCollider: {fileID: 1309060953}

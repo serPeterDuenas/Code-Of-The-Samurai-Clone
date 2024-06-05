@@ -306,7 +306,7 @@ MonoBehaviour:
   respawnTime: 4
   facingLeft: 0
   damage: 30
-  attackCooldown: 2.2
+  attackCooldown: 2.5
   projectile: {fileID: 8300000, guid: 5f75ea5612507884d94bdda8aec2e476, type: 3}
   range: 9
   colliderDistance: 0.53
@@ -442,7 +442,7 @@ MonoBehaviour:
   leftEdge: {fileID: 5369522755131566883}
   rightEdge: {fileID: 5369522755624067355}
   enemy: {fileID: 5369522754386641304}
-  speed: 2
+  speed: 3
   movingLeft: 0
   idleDuration: 1
 --- !u!1 &5369522754800547291
