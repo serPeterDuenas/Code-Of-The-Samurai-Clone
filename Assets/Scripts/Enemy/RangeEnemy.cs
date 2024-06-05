@@ -20,7 +20,13 @@ public class RangeEnemy : MonoBehaviour
     [SerializeField] private float respawnTime = 4;
     [SerializeField] bool facingLeft = false;
     [SerializeField] private int damage;
+
+    // Make attackCooldown and initialDelay closer values to each other
+    // To decrease the "wind up" time of the initial attack
     [SerializeField] private float attackCooldown;
+    [SerializeField] private float initialDelay = 2.5f;
+
+
     [SerializeField] private AudioClip projectile;
 
     private float timer = Mathf.Infinity;
@@ -73,8 +79,9 @@ public class RangeEnemy : MonoBehaviour
 
         if (PlayerInSight())
         {
+            initialDelay += Time.deltaTime; 
             // attack only when player is in sight
-            if (cooldownTimer >= attackCooldown)
+            if (cooldownTimer >= attackCooldown && initialDelay >= attackCooldown)
             {
                 cooldownTimer = 0;
                 //Debug.Log("I am going to attack");

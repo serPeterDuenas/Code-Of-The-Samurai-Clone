@@ -545,6 +545,7 @@ MonoBehaviour:
   facingLeft: 0
   damage: 15
   attackCooldown: 2
+  initialDelay: 0.8
   projectile: {fileID: 8300000, guid: 5f75ea5612507884d94bdda8aec2e476, type: 3}
   range: 6.03
   colliderDistance: 0.62
@@ -3421,6 +3422,7 @@ MonoBehaviour:
   facingLeft: 0
   damage: 15
   attackCooldown: 2
+  initialDelay: 1.5
   projectile: {fileID: 8300000, guid: 5f75ea5612507884d94bdda8aec2e476, type: 3}
   range: 6.03
   colliderDistance: 0.62
