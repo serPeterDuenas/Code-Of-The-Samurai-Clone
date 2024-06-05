@@ -499,7 +499,7 @@ MonoBehaviour:
   leftEdge: {fileID: 2217158209126823400}
   rightEdge: {fileID: 2217158207745261520}
   enemy: {fileID: 2217158208922967891}
-  speed: 7
+  speed: 8
   movingLeft: 0
   idleDuration: 1
 --- !u!1 &2217158208694992871
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 867b2db7ef07f1a43987e4e00ef5ae6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShielded: 0
+  isShielded: 1
   damageClip: {fileID: 8300000, guid: 98b846595648ece4ea5be0ee39b5b559, type: 3}
   shieldBreakClip: {fileID: 0}
   maxHealth: 30
@@ -836,10 +836,11 @@ MonoBehaviour:
   - {fileID: 2217158207812206332}
   - {fileID: 2217158208498526992}
   bulletPosition: {fileID: 2217158208694992870}
-  respawnTime: 4
+  respawnTime: 2
   facingLeft: 0
-  damage: 5
-  attackCooldown: 1.5
+  damage: 8
+  attackCooldown: 1.2
+  initialDelay: 0.8
   projectile: {fileID: 8300000, guid: 5f75ea5612507884d94bdda8aec2e476, type: 3}
   range: 6.03
   colliderDistance: 0.62

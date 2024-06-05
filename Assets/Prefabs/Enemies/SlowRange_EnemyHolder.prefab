@@ -307,9 +307,10 @@ MonoBehaviour:
   facingLeft: 0
   damage: 30
   attackCooldown: 2.5
+  initialDelay: 2.5
   projectile: {fileID: 8300000, guid: 5f75ea5612507884d94bdda8aec2e476, type: 3}
-  range: 9
-  colliderDistance: 0.53
+  range: 7.5
+  colliderDistance: 0.57
   boxCollider: {fileID: 5369522754386641300}
   playerLayer:
     serializedVersion: 2
