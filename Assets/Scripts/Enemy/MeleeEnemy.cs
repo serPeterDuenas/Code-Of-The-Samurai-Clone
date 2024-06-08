@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
 {
+
+    // Set these two variables closer in value to reduce time between
+    // The first attack when spotting Player
     [SerializeField] private float attackCooldown;
+    [SerializeField] private float initialDelay = 0.5f;
+
+
     [SerializeField] private float range;
     [SerializeField] private float colliderDistance;
     [SerializeField] private int damage;
@@ -38,8 +44,9 @@ public class MeleeEnemy : MonoBehaviour
 
         if (PlayerInSight())
         {
+            initialDelay += Time.deltaTime; 
             // attack only when player is in sight
-            if (cooldownTimer >= attackCooldown)
+            if (cooldownTimer >= attackCooldown && initialDelay >= attackCooldown)
             {
                 cooldownTimer = 0;
                 //Debug.Log("I am going to attack");
