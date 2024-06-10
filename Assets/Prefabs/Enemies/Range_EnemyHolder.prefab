@@ -338,6 +338,7 @@ MonoBehaviour:
   facingLeft: 0
   damage: 15
   attackCooldown: 2
+  initialDelay: 0.8
   projectile: {fileID: 8300000, guid: 5f75ea5612507884d94bdda8aec2e476, type: 3}
   range: 6.03
   colliderDistance: 0.62
@@ -600,9 +601,9 @@ MonoBehaviour:
   leftEdge: {fileID: 929806629790583098}
   rightEdge: {fileID: 929806631173063426}
   enemy: {fileID: 929806629985133441}
-  speed: 5
+  speed: 6
   movingLeft: 0
-  idleDuration: 1
+  idleDuration: 0.3
 --- !u!1 &929806630416390082
 GameObject:
   m_ObjectHideFlags: 0

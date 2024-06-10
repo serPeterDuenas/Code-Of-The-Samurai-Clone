@@ -16,11 +16,18 @@ public class Player : MonoBehaviour
     
 
 
+    //public void UpdateHealth()
+    //{
+    //    GameManager.PlayerHealth = currentHealth;
+    //    Debug.Log(GameManager.PlayerHealth);
+    //}
+
     public void TakeDamage(int damageValue)
     {
         currentHealth -= damageValue;
         healthBar.SetHealth(currentHealth);
         SoundManager.thisInstance.PlaySound(damageSound);
+        //UpdateHealth();
 
         if (currentHealth <= 0 )
         {
@@ -32,8 +39,12 @@ public class Player : MonoBehaviour
     {
         healthBar = FindObjectOfType<HealthBar>();
         currentHealth = maxHealth;
+
+        //healthBar.SetMaxHealth(currentHealth);
         healthBar.SetMaxHealth(maxHealth);
         livesManager = FindObjectOfType<LivesManager>();
+
+        //UpdateHealth();
     }
 
     public void KillPlayer()

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager thisInstance { get; private set; }
 
 
+    [SerializeField] public static int PlayerHealth = 100;
     [SerializeField] private int playerLives = 3;
     public static int currentPlayerLives = 3;
     private static bool hasInit = false;
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject thisScene;
 
 
+
+    public static void ResetHealth()
+    {
+        PlayerHealth = 100;
+    }
     // Start is called before the first frame update
     void Awake()
     {
@@ -73,6 +79,7 @@ public class GameManager : MonoBehaviour
 
         if (currentPlayerLives <= 0 && playerDead)
         {
+            //ResetHealth();
             //currentPlayerLives = playerLives;
             var scene = SceneManager.GetActiveScene();
             currentScene = scene.name;

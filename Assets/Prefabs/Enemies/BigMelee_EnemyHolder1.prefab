@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1.5
+  initialDelay: 0.5
   range: 1.5
   colliderDistance: 0.79
   damage: 45
@@ -279,7 +280,7 @@ MonoBehaviour:
   enemy: {fileID: 2772089720291580175}
   speed: 4
   movingLeft: 0
-  idleDuration: 1
+  idleDuration: 0.3
 --- !u!1 &2772089720878783606
 GameObject:
   m_ObjectHideFlags: 0

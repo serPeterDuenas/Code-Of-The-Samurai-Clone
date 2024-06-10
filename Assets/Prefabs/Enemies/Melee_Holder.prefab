@@ -143,9 +143,9 @@ MonoBehaviour:
   leftEdge: {fileID: 8582599521238250061}
   rightEdge: {fileID: 8582599521242807108}
   enemy: {fileID: 8582599521964228156}
-  speed: 5
+  speed: 6
   movingLeft: 0
-  idleDuration: 1
+  idleDuration: 0.2
 --- !u!1 &8582599521897618894
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 2
+  initialDelay: 0.5
   range: 1.5
   colliderDistance: 0.8
   damage: 20
