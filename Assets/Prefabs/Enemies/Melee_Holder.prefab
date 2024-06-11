@@ -143,7 +143,7 @@ MonoBehaviour:
   leftEdge: {fileID: 8582599521238250061}
   rightEdge: {fileID: 8582599521242807108}
   enemy: {fileID: 8582599521964228156}
-  speed: 6
+  speed: 7
   movingLeft: 0
   idleDuration: 0.2
 --- !u!1 &8582599521897618894
@@ -335,7 +335,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.21, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}

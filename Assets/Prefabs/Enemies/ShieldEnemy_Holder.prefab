@@ -274,7 +274,7 @@ MonoBehaviour:
   leftEdge: {fileID: 7812361116618030383}
   rightEdge: {fileID: 7812361116614259750}
   enemy: {fileID: 7812361115892838750}
-  speed: 7
+  speed: 8
   movingLeft: 0
   idleDuration: 0.4
 --- !u!1 &7812361116614259751
