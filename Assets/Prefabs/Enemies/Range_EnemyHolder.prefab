@@ -314,7 +314,7 @@ MonoBehaviour:
   isShielded: 0
   damageClip: {fileID: 8300000, guid: 98b846595648ece4ea5be0ee39b5b559, type: 3}
   shieldBreakClip: {fileID: 0}
-  maxHealth: 30
+  maxHealth: 20
   currentHealth: 0
 --- !u!114 &929806629985133451
 MonoBehaviour:
@@ -336,7 +336,7 @@ MonoBehaviour:
   bulletPosition: {fileID: 929806630214419252}
   respawnTime: 4
   facingLeft: 0
-  damage: 15
+  damage: 20
   attackCooldown: 2
   initialDelay: 0.8
   projectile: {fileID: 8300000, guid: 5f75ea5612507884d94bdda8aec2e476, type: 3}
